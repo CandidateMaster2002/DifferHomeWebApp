@@ -1,0 +1,315 @@
+.bg_container{
+    margin-bottom:2%;
+    margin-top: 50px;
+    z-index: 1;
+    position: absolute;
+    background-repeat: no-repeat;
+    height: 90%;
+    width: 100%;
+    min-width: 100vw;
+}
+
+ .bg_container .image{
+    width: 100%;
+    height: 95%;
+    background-image: linear-gradient(rgba(17, 71, 101, 0.3), rgba(17, 71, 101, 0.6)),
+    url("../public/images/carousel.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+    /* margin:0px ; */
+    /* z-index:-1; */
+}
+
+.bg_container img{
+    margin:0px;
+    padding: 0;
+    width:100%;
+    height:80vh; 
+    z-index: 2;
+}
+.tagline{
+    width: 95%;
+    color: #fff;
+    top: 15%;
+    left: 6%;
+    transform: translate (-10%, -20%);
+    position: absolute;
+    text-align: left;
+    font-family: 'Poppins', sans-serif;
+}
+.tagline p1{
+    margin: 0px;
+    padding: 0px;
+    color: #fff;
+    font-size: 25px;
+}
+.tagline p2{
+    color: #fff;
+    font-size: 25px;
+    margin-left: 150px;
+    padding-top: 1px;
+}
+.tagline h5{
+    margin-top: 40px;
+    font-size: 20px;
+    padding-bottom: 0%;
+}
+.tagline h2{
+    margin-top: 0%;
+    font-size: 40px;
+    font-family:'Times New Roman', Times, serif;
+}
+.tagline t2{
+    font-size: 22px;
+}
+.tagline h1{
+    margin-top: 0;
+    margin-left: 100px;
+    font-size: 65px;
+}
+.three_lines_icons{
+    margin-top: 100px;
+    width: 90%;
+    color: #fff;
+    top: 50%;
+    left: 6%;
+    transform: translate (-10%, -20%);
+    position: absolute;
+    font-family: 'Poppins', sans-serif;
+}
+.three_lines_icons p{
+    text-align: left;
+    margin-left: 50px;
+}
+@media (max-width:700px) {
+    .bg_container .image {
+        height : 90vh;
+    }
+    .bg_container img{
+        height : 100vh;
+    }
+    .tagline{
+        top: 10%;
+        left: 2%;
+        right: 6%;
+    }
+    .tagline p1{
+        font-size: 15px;
+    }
+    .tagline p2{
+        font-size: 15px;
+        margin-left: 70px;
+    }
+    .tagline h5{
+        text-align: center;
+        margin-top: 80px;
+        font-size: 25px;
+    }
+    .tagline h2, t2{
+        text-align: center;
+    }
+    .tagline h1{
+        font-size: 50px;
+        text-align: center;
+        margin-left: 0;
+        margin-top: 20px;
+        left: 1%;
+    }
+    .three_lines_icons{
+        margin-top: 160px;
+        width: 100%;
+        color: #fff;
+        left: 20%;
+        align-items: center;
+    }
+    .three_lines_icons p{
+        text-align: left;
+        margin-left: 20px;
+        font-size: 15px;
+        margin-bottom: 20px;
+    }
+}
+
+/* Search Box */
+.searchbox{
+    top: 30%;
+    right: 10%;
+    height: 310px;
+    width: 310px;
+    background-color: rgba(254, 254, 254, 0.6);
+    position: absolute;
+    z-index: 2;
+    border-radius: 5%;
+}
+.searchbox h4{
+    margin: 20px;
+    text-align: center;
+    font-weight: bold;
+}
+.searchbox form{
+    align-items: center;
+    margin: 0px 20px;
+}
+.searchbox input{
+    margin-left: 5px;
+    font-weight: 20%;
+}
+.state_name{
+    margin: 5px 20px;
+}
+.state_name label{
+    font-weight: 20%;
+    padding: 2px;
+}
+.state_name input[placeholder=States]{
+    padding: 5px 10px;
+    font-size: 13px;
+}
+.state_name input[list=states] {
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+}
+.state_name input[list=states]:hover {
+    border: 1px solid rgb(27, 66, 87);
+}
+
+.state_name datalist[id=states]:after{
+    background-color: #fff;
+    font-size: 15px;
+    padding: none;
+    margin: 0%;
+}
+
+.city_name{
+    margin: 10px 20px;
+}
+.city_name label{
+    font-weight: 20%;
+    padding: 2px;
+}
+.city_name input[placeholder=City]{
+    padding: 5px 10px;
+    font-size: 13px;
+}
+.city_name input[list=cities] {
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+}
+.city_name input[list=cities]:hover {
+    border: 1px solid rgb(27, 66, 87);
+}
+
+.city_name datalist[id=cites]:after{
+    background-color: #fff;
+    font-size: 15px;
+    padding: none;
+    margin: 0%;
+}
+
+.searchbox a{
+    width: auto;
+    background-color: #114765;
+    color: #fff;
+    border-radius: 5px;
+    font-size: 15px;
+    padding: 5px 10px;
+    margin: 20px 25px;
+    border: none;
+    text-decoration: none;
+}
+.reponsive_btn a{
+    display: none;
+}
+.searchbox a :hover{
+    background-color: #002e46;
+}
+@media (max-width:700px){
+    .searchbox{
+        display: none;
+    }
+    .reponsive_btn a{
+        display: inline;
+        top: 58%;
+        margin-left: 35%;
+        position: absolute;
+        width: auto;
+        background-color: #114765;
+        color: #fff;
+        border-radius: 5px;
+        font-size: 18px;
+        padding: 5px 15px;
+        border: none; 
+        z-index: 4;
+        text-decoration: none;
+        align-items: center;
+    }
+}
+
+/*----ONE STEP SOLUTION PART WITH BOY ON SOFA----*/
+.one_step_solution{
+    position: absolute;
+    display: flex;
+    z-index: 3;
+    margin-top: 110vh;
+    width: 80%;
+    left: 6%;
+}
+.one_step_textpart{
+    margin: 50px;
+}
+.one_step_textpart h1{
+    color: #114765;
+    font-weight: bold;
+}
+.one_step_textpart p{
+    font-size: 20px;
+    margin: 30px 0;
+}
+.button_1{
+    background-color: #384FE9;
+    color: #fff;
+    text-decoration: none;
+    padding: 7px 18px;
+    border-radius: 5px;
+    margin: 30px 30px 0 0;
+    box-shadow: 0 1px 10px rgb(137, 137, 137);
+}
+.button_1:hover{
+    background-color: #00159f;
+    color: #fff;
+}
+.button_2{
+    border: 1px solid #384FE9;
+    color: #384FE9;
+    text-decoration: none;
+    padding: 7px 18px;
+    border-radius: 5px;
+    margin: 30px 30px 0px 0px;
+    box-shadow: 0 1px 10px rgb(137, 137, 137);
+}
+.button_2:hover{
+    background-color: #384FE9;
+    color: #fff;
+}
+.sofa-boy-img img{
+    width: 90%;
+    margin: 40px 0px 40px 60px;
+    animation: up-down 2s ease-in-out infinite alternate-reverse both;
+}
+@keyframes up-down {
+    0% {
+        transform: translateY(10px);
+    }
+    100%{
+        transform: translateY(-10px);
+    }
+}
+@media (max-width:700px){
+    .one_step_solution{
+        display: none;
+    }
+}

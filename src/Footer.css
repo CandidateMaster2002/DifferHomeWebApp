@@ -1,0 +1,130 @@
+.footer{
+    width: 100%;
+    text-align: center;
+    margin-bottom: -1rem;
+    background: linear-gradient(hsla(201, 71%, 23%, 0.8),
+    rgb(17, 71, 101, 0.8)), url("../public/images/footer-img.jpeg");
+    margin-top: 247%;
+    height: 450px;
+    background-size: 100%;
+    position: absolute;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-attachment: fixed;
+}
+.footerContent{
+    color: #f4f4f4;
+    display: flex;
+    margin-top: 30px;
+    justify-content: center;
+    text-align: left;
+}
+.about{
+    margin: 40px 0px;
+}
+.about img{
+    width: 40px;
+    margin-right: 10px;
+}
+.about h2 strong {
+    font-size: 35px;
+}
+.about p{
+    margin: 30px 10px 10px 0px;
+    font-size: 15px;
+}
+.about h5{
+    padding-top: 30px;
+    font-size: 20px;
+}
+.explore{
+    margin: 40px 30px;
+    padding-left: 250px;
+}
+.explore h3{
+    padding-bottom: 20px;
+}
+.explore p{
+    padding-top: 0px;
+    font-size: 15px;
+}
+.contact{
+    margin-top: 40px;
+    padding-left: 250px;
+}
+.contact h3{
+    padding-bottom: 20px;
+}
+.contact-info a{
+    color: #fff;
+    text-decoration: none;
+    padding-left: 25px;
+}
+.contact-info a :hover{
+    text-decoration: none;
+    color: #9e9e9e;
+}
+.contact-info span{
+    position: absolute;
+    z-index: 4;
+    color: #fff;
+}
+.icons{
+    padding-top: 1rem;
+}
+
+.icons a{
+    font-size: 1.5rem;
+    margin: 0.8rem;
+    color: #f4f4f4;
+}
+.icons a :hover{
+    color: #9e9e9e;
+}
+.copyright{
+    clear: both;
+    color: #fff;
+    text-align: center; 
+    justify-content: center;
+}
+.copyright p{
+    color: #fff;
+    font-size: 18px;
+}  
+
+@media (max-width:700px){
+    .footer {
+        margin-top: 395vh;
+        position: absolute;
+        background-position: bottom;
+        background: linear-gradient(hsla(201, 71%, 23%, 0.8),
+      rgb(17, 71, 101, 0.8)), url("../public/images/footer-img.jpeg");
+        height: 455px;
+        background-repeat: no-repeat;
+        background-position: bottom;
+        background-attachment: fixed;
+    }
+    .footerContent{
+        display: block;
+        text-align: center;
+    }
+    .footerContent h5{
+        display: none;
+    }
+    .explore{
+        display: none;
+    }
+    .contact{
+        margin: 20px;
+        padding-left: 0px;
+    }
+    .icons a{
+        font-size: 1.1rem;
+    }
+    .copyright p{
+        background-color: rgba(255, 255, 255, 0.8);
+        font-size: 15px;
+        color: #114765;
+        padding: 7px;
+    } 
+}    

@@ -1,0 +1,40 @@
+.GainExperience{
+    margin-top: 170%;
+    position: absolute;
+    width: 85%;
+    left: 10%;
+    text-align: center;
+}
+.Gain_Exp{
+    margin: 40px 10px;
+    display: flex;
+    justify-content: space-between;
+}
+.Gain_img :hover {
+    transform: scale(1.5);
+ }
+.Exp_img{
+    box-shadow: 0 1px 10px rgb(137, 137, 137);
+    width: 310px;
+    height: 350px;
+    border-radius: 5px;
+}
+
+.Exp_img img{
+    margin-top: 35px;
+}
+
+.Exp_img h4{
+    margin-top: 15px;
+}
+.Exp_img p{
+    text-align: center;
+    font-size: 16px;
+    padding: none;
+    margin-top: 15px;
+}
+@media (max-width:700px){
+    .GainExperience{
+        display: none;
+    }
+}
