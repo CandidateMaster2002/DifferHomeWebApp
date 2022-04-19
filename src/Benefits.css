@@ -1,8 +1,8 @@
 .benefit{
-    margin-top: 87%;
+    margin-top: 165vh;
     position: absolute;
     width: 85%;
-    left: 10%;
+    left: 8%;
     text-align: center;
 }
 .benefit_cards{
@@ -30,7 +30,7 @@
     padding: none;
     margin-top: 5px;
 }
-@media (max-width:700px){
+@media (max-width:640px){
     .benefit{
     margin-top: 105vh;
     width: 100%;
@@ -69,4 +69,25 @@
        margin-top: 5px;
    }
     
+}
+@media (min-width:641px) and (max-width:961px){
+    .benefit{
+    margin-top: 140vh;
+    width: 100%;
+    left: 2%;
+    z-index: 5;
+    }
+    .benefit_icon{
+        width: 130px;
+        height: 130px;
+    }
+    .benefit_icon img{
+        margin-top: 15px;
+   }
+   .benefit_icon p{
+    text-align: center;
+    font-size: 15px;
+    padding: 4px;
+    margin-top: 10px;
+   }
 }

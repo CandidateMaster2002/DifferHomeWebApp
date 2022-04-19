@@ -1,6 +1,6 @@
 .Consult_about {
     position: absolute;
-    margin-top: 205%;
+    margin-top: 410vh;
     width: 80%;
     left: 6%;
 }
@@ -60,7 +60,7 @@
     display: none;
 }
 
-@media (max-width:700px){
+@media (max-width:600px){
     .Consult_about {
         position: absolute;
         margin-top: 330vh;
@@ -111,5 +111,49 @@
         background-color: #00159f;
         color: #fff;
     }
-
+}
+@media (min-width:601px) and (max-width:1000px){
+    .Consult_about {
+        position: absolute;
+        margin-top: 350vh;
+        width: 90%;
+        left: 3%;
+    }    
+    .conslt_textpart{
+        margin: 60px 10px;
+    }
+    .conslt_textpart p{
+        font-size: 18px;
+        margin: 30px 0;
+        width: 85%;
+    }
+    .conslt-boy-img img{
+        width: 200px;
+        height: 200px;
+        margin: 80px 0px 30px 30px;
+        animation: up-down 2s ease-in-out infinite alternate-reverse both;
+    }
+    @keyframes up-down {
+        0% {
+            transform: translateY(10px);
+        }
+        100%{
+            transform: translateY(-10px);
+        }
+    }
+    .about_part{
+        text-align: center;
+        margin: 10px 0px 30px 10px;
+        width: 100%;
+    }
+    .about_part h2{
+        color: #114765;
+    }
+    .about_part p{
+        font-size: 18px;
+        margin-top: 20px;
+    }
+    .responsive_part{
+        display: none;
+    }
 }

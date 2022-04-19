@@ -47,7 +47,7 @@ const CityImg = () => {
             dream home</p>
 
             <a href="under_maintainance" class="button_1">Explore Properties</a>
-            </div>
+          </div>
             
         </div>
         <div className='city_img_responsive'>

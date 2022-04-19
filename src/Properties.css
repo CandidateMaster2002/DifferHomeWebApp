@@ -1,12 +1,12 @@
 .Properties{
-    margin-top: 107%;
+    margin-top: 210vh;
     position: absolute;
-    width: 85%;
-    left: 10%;
+    width: 90%;
+    left: 5%;
     text-align: center;
 }
 .Properties_cards{
-    margin: 40px 10px;
+    margin: 50px 10px;
     display: flex;
     justify-content: space-between;
 }
@@ -21,8 +21,8 @@
 }
 .Properties_img img{
     border-radius: 20px;
-    width: 300px;
-    height: 200px;
+    width: 320px;
+    height: 220px;
 }
 .Properties_img :hover{
     border: none;
@@ -41,9 +41,9 @@
     display: block;   
 } */
 
-@media (max-width:700px){
+@media (max-width:600px){
     .Properties{
-        top: 145%;
+        top: 145vh;
         position: absolute;
         width: 100%;
         left: 0%;
@@ -77,5 +77,42 @@
         font-size: 15px;
         margin: 10px 0px;
         padding-bottom: 8px;
+    }
+}
+@media (min-width:601px) and (max-width:1000px){
+    .Properties{
+        margin-top: 175vh;
+        left: 3%;
+    }
+    .Properties_cards{
+        margin: 20px 40px;
+        flex-wrap: wrap;
+        left: 5%;
+    }
+    .Properties_cards :hover{
+        border: #114765;
+        box-shadow: 0 1px 10px rgb(133, 133, 133);
+        border-radius: 20px;
+    }
+    .Properties_img{
+        background-color: #114765;
+        border-radius: 20px;
+
+    }
+    .Properties_img img{
+        border-radius: 20px;
+        width: 290px;
+        height: 190px;
+
+    }
+    .Properties_img :hover{
+        border: none;
+        box-shadow: none;
+    }
+    .Properties_img p{
+        color: #fff;
+        font-size: 18px;
+        margin: 5px 0px;
+        padding-bottom: none;
     }
 }

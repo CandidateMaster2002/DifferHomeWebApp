@@ -138,8 +138,8 @@ const Home = () => {
                    </h1>
                    <p>
                    DifferHome is a one-stop platform for all the activities,
-                   either it is <br />locating the perfect dream home to building
-                   a new one, we provide <br />all the services just in here.
+                   either it is locating the perfect dream home to building
+                   a new one, we provide all the services just in here.
                    </p>
                    <a href="under_maintainance" class="button_1">Get Started</a>
                    <a href="#contactus" class="button_2">Contact Us</a>
