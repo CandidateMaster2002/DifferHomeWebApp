@@ -12,14 +12,14 @@ const CityImg = () => {
         <div className='city_img_part'> 
             <div className='images_1'>
             <div className="text-container1">            
-            <img src='images/city1.jpeg' alt=" " />
+            <img src='images/city1.jpg' alt=" " />
             
             <div className="hover_text">
             <div className="text">Atulya, Ajmer Road</div>
             </div>
             </div>
             <div className="text-container2">
-            <img src='images/city2.jpeg' alt=" " />
+            <img src='images/city2.jpg' alt=" " />
             <div className="hover_text">
             <div className="text">Malviya Nagar</div>
             </div>
@@ -27,13 +27,13 @@ const CityImg = () => {
             </div>
             <div className='images_2'>
             <div className="text-container3">
-            <img src='images/city3.jpeg' alt=" " />
+            <img src='images/city3.jpg' alt=" " />
             <div className="hover_text">
             <div className="text">Atulya, Ajmer Road</div>
             </div>
             </div>
             <div className="text-container4">
-            <img src='images/city4.jpeg' alt=" " />
+            <img src='images/city4.jpg' alt=" " />
             <div className="hover_text">
             <div className="text">Malviya Nagar</div>
             </div>

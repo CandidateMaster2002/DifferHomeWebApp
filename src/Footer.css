@@ -3,7 +3,7 @@
     text-align: center;
     margin-bottom: -1rem;
     background: linear-gradient(hsla(201, 71%, 23%, 0.8),
-    rgb(17, 71, 101, 0.8)), url("../public/images/footer-img.jpeg");
+    rgb(17, 71, 101, 0.8)), url("../public/images/footer-img.jpg");
     margin-top: 247%;
     height: 450px;
     background-size: 100%;
@@ -98,7 +98,7 @@
         position: absolute;
         background-position: bottom;
         background: linear-gradient(hsla(201, 71%, 23%, 0.8),
-      rgb(17, 71, 101, 0.8)), url("../public/images/footer-img.jpeg");
+      rgb(17, 71, 101, 0.8)), url("../public/images/footer-img.jpg");
         height: 455px;
         background-repeat: no-repeat;
         background-position: bottom;
@@ -137,7 +137,7 @@
         position: absolute;
         background-position: bottom;
         background: linear-gradient(hsla(201, 71%, 23%, 0.8),
-      rgb(17, 71, 101, 0.8)), url("../public/images/footer-img.jpeg");
+      rgb(17, 71, 101, 0.8)), url("../public/images/footer-img.jpg");
         height: 400px;
         background-repeat: no-repeat;
         background-position: bottom;

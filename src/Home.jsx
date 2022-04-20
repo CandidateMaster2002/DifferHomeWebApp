@@ -122,11 +122,11 @@ const Home = () => {
 
                      </datalist> <br />
                 </div>
-                <a href="under_maintainance" class="start_btn">Start</a>
+                <a href="second-page" class="start_btn">Start</a>
               </form> 
            </div>
            <div className="reponsive_btn">
-            <a href="under_maintainance" class="rsp_btn">Get Started</a>
+            <a href="second-page" class="rsp_btn">Get Started</a>
            </div>
 
            {/* one step solution part with boy sitting on sofa */}
@@ -145,7 +145,7 @@ const Home = () => {
                    <a href="#contactus" class="button_2">Contact Us</a>
                </div>
                 <div className="sofa-boy-img">
-                    <img src='images/sofa-boy.png' alt="Boy on Sofa" />
+                    <img src='images/Sofa-boy.png' alt="Boy on Sofa" />
                 </div>
            </div>
 
