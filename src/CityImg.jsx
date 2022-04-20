@@ -55,19 +55,19 @@ const CityImg = () => {
           <div className="responsive_img_scroll" scrolldelay="1000">
           <marquee behavior="alternate" direction="right">
             <div className="img_p1">
-            <img src='images/city1.jpeg' alt=" " />
+            <img src='images/city1.jpg' alt=" " />
             <p>Atulya, Ajmer Road</p>            
             </div>
             <div className="img_p2">            
-            <img src='images/city2.jpeg' alt=" " />
+            <img src='images/city2.jpg' alt=" " />
             <p>Malviya Nagar</p>            
             </div>
             <div className="img_p3">            
-            <img src='images/city3.jpeg' alt=" " />
+            <img src='images/city3.jpg' alt=" " />
             <p>Atulya, Ajmer Road</p>            
             </div>
             <div className="img_p4">            
-            <img src='images/city4.jpeg' alt=" " />
+            <img src='images/city4.jpg' alt=" " />
             <p>Malviya Nagar</p>            
             </div>
             </marquee>           
