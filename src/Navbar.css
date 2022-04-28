@@ -21,12 +21,12 @@
   .nav-wrapper img{
       width: 30px;
   }
-  .nav-wrapper b{
-    margin-left: 25px;
-    text-decoration: none;
-    color: #000000;
+  .nav-wrapper a{
+    margin-left: 20px;
+    font-size: 28px;
+    text-decoration-line: none;
+    color: #114765;
   }
-
   @media(max-width: 768px) {
       .nav-wrapper {
         width: 90%;
@@ -52,7 +52,7 @@
   } 
   .logo :hover {
     text-decoration: none;
-    color: #114765;
+    color: #062e44;
   }
   .overlay-menu {
       z-index: 9;
@@ -93,7 +93,7 @@
   #navbar li a {
     color: black;
     display: block;
-    font-weight: 300;
+    font-weight: 600;
     font-size: 1em;
     height: 50px;
     letter-spacing: 1px;

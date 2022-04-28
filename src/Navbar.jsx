@@ -1,4 +1,6 @@
+// import { faBars, faClose } from '@fortawesome/free-solid-svg-icons';
 import React from 'react';
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import './index.css';
 
 
@@ -14,9 +16,7 @@ const Navbar = () => {
                         {/* <a href="" > <img src="./../images/DH logo.png" alt="logo"></a> */}
                         {/* <!-- Logo Placeholder for Inlustration --> */}
                         <a href="#home">
-                            <i className="fa fa-angellist logo" />
-
-                            <b> Differ<strong>Home</strong></b></a>
+                        <b> Differ<strong>Home</strong></b></a>
                     </div>
 
                     {/* <!-- Navbar Links --> */}
@@ -37,18 +37,18 @@ const Navbar = () => {
 
 
             {/* <!-- Menu Icon --> */}
-            <div className="menuIcon">
-                <span className="icon icon-bars"></span>
-                <span className="icon icon-bars overlay"></span>
+            {/* <div className="menuIcon">
+                <span><FontAwesomeIcon icon={faBars} /></span>
+                <span><FontAwesomeIcon icon={faClose} /></span>
             </div>
 
 
-            {/* <div className="overlay-menu">
+            <div className="overlay-menu">
                 <ul id="menu">
                     <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#contact">Contact US</a></li>
-                    <li><a href="#services">Services</a></li>
+                    <li><a href="#about-section">About</a></li>
+                    <li><a href="under_maintainance">Contact US</a></li>
+                    <li><a href="#contactus">Services</a></li>
                 </ul>
             </div> */}
         </>
