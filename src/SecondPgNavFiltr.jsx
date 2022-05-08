@@ -233,6 +233,38 @@ toggle between hiding and showing the dropdown content */
                                 </div>
                             </div>
                         </div>
+                        <div className="templates">
+                            <div className="tempBox1" id="template-box">
+                                <div className="contentBox1" id="content-box">
+                                    <p className="temp-title">Gokul Apartment<br />
+                                        <span>Manipur Colony, Manhattan, Dng...</span></p>
+                                    <div className="temp-icon">
+                                        <span><FontAwesomeIcon icon={faBed} /> 3 </span>
+                                        <span><FontAwesomeIcon icon={faIndianRupee} /> 75L </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="tempBox2" id="template-box">
+                                <div className="contentBox2" id="content-box">
+                                    <p className="temp-title">Gokul Villa<br />
+                                        <span>Manipur Colony, Manhattan, Dng...</span></p>
+                                        <div className="temp-icon">
+                                        <span><FontAwesomeIcon icon={faBed} /> 3 </span>
+                                        <span><FontAwesomeIcon icon={faIndianRupee} /> 75L </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="tempBox3" id="template-box">
+                                <div className="contentBox3" id="content-box">
+                                    <p className="temp-title">Gokul Bungalow<br />
+                                        <span>Manipur Colony, Manhattan, Dng...</span></p>
+                                        <div className="temp-icon">
+                                        <span><FontAwesomeIcon icon={faBed} /> 3 </span>
+                                        <span><FontAwesomeIcon icon={faIndianRupee} /> 75L </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
                 </div>

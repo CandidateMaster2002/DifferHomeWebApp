@@ -59,7 +59,7 @@
   }
 .search-container{
     float: left;
-    margin: 0px 80px;
+    margin: 0px 60px;
 }
 .search-container input[type=text]{
   padding: 6px;
@@ -67,39 +67,14 @@
   margin-bottom: 0px;
   font-size: 15px;
   border: none;
-  height: 35px;
-  width: 400px;
+  height: 30px;
+  width: 450px;
   border-radius: 5px;
-}
-@media (min-width: 1170px) and (max-width: 1290px){
-  .search-container input[type=text]{
-    padding: 4px;
-    width: 300px;
-  }
-  .search-container{
-    margin: 0px 20px;
-}
-  .Sec-Navbar li a {
-    margin: 0 10px;
-  }
-}
-@media (min-width: 700px) and (max-width: 1170px){
-  .search-container input[type=text]{
-    padding: 4px;
-    width: 300px;
-  }
-  .search-container{
-    float: right;
-    margin: 0px 20px;
-}
-  .Sec-Navbar li a {
-    display: none;
-  }
 }
 .search-container a {
   padding: 6px;
   margin-bottom: 5px;
-  height: 35px;
+  height: 30px;
   border-radius: 5px;
   background: none;
   color: #ffff;
@@ -115,30 +90,9 @@
     transition: transform 0.5s ease-out;
     -webkit-transition: transform 0.5s ease-out;
   } 
-  @media(max-width: 700px) {
-      .Sec-Navbar li a {
-        display: none;
-      }
-      .Sec-Navbar{
-        width: 100vh;
-      }
-      .logo {
-        margin-left: 5px;
-      }
-      .search-container input[type=text]{
-        width: 150px;
-      }
-
-  } @media(orientation: landscape) {
-    .Sec-Navbar ul {
-          display: inline-block;
-        }
-      }
-  
-      .Sec-Navbar li {
-    display: inline-block;
-  }
-  
+.Sec-Navbar li {
+ display: inline-block;
+}  
   .Sec-Navbar li a {
     color: rgb(255, 255, 255);
     display: block;
@@ -195,6 +149,59 @@
     /* transition: 0s; */
   }
 
+  @media (min-width: 1170px) and (max-width: 1290px){
+    .search-container input[type=text]{
+      padding: 4px;
+      width: 300px;
+    }
+    .search-container{
+      margin: 0px 20px;
+  }
+    .Sec-Navbar li a {
+      margin: 0 10px;
+    }
+  }
+
+@media (min-width: 700px) and (max-width: 1170px){
+   .search-container input[type=text]{
+    padding: 4px;
+    width: 300px;
+  }
+  .search-container{
+    float: right;
+    margin: 0px 20px;
+}
+  .Sec-Navbar li a {
+    display: none;
+  }
+}
+@media(max-width: 700px) {
+  .Sec-Navbar li a {
+    display: none;
+  }
+  .Sec-Navbar{
+    width: 100vh;
+  }
+  .logo {
+    margin-left: 5px;
+  }
+  .search-container input[type=text]{
+    width: 150px;
+  }
+
+}
+@media(orientation: landscape) {
+  .Sec-Navbar ul {
+    display: inline-block;
+  }
+}
+
+@media (max-width: 1169px){
+  #left-filter{
+    display: none;
+  } 
+}
+
 /*---------filter heading-----------*/
 .filter-header{
     position: relative;
@@ -212,9 +219,11 @@
   margin-left: 70px;
 }
 .quote h3{
-  font-size: 20px;
+  margin-top: 10px;
+  font-size: 25px;
   color: #114765;
   padding-bottom: none;
+  line-height: 1.1;
 }
 .quote p{
   padding-top: none;
@@ -257,8 +266,8 @@
 .resdropbtn {
   padding-left: none;
   top: 0%;
-  margin: 10px 0px 10px 10px;
-  width: 270px;
+  margin: 10px 0px 10px 27px;
+  width: 240px;
   border: none;
   border-radius: 5px;
 }
@@ -273,12 +282,12 @@
   width: auto;
 }
 .propertyType p{
-  margin: 10px;
+  margin: 10px 0 0 20px;
   font-weight: 600; 
 }
 .propIcons{
   display: flex;
-  margin: 5px;
+  margin: 8px;
   justify-content:center;
 }
 .Icon{
@@ -353,10 +362,10 @@ input[type="number"]{
   justify-content: center;
 }
 .bhkTypes label{
-  border: 1px solid #114765;
-  border-radius: 3px;
+  border: 1px solid #bbbbbb;
+  border-radius: 10px;
   padding: 2px 10px;
-  margin: 7px;
+  margin: 5px;
 }
 .propertyAge{
   margin: 10px;
@@ -375,6 +384,7 @@ input[type="number"]{
   margin: 5px 10px;
 }
 .propertyStatus p{
+  font-size: 15px;
   font-weight: 600;
   margin-left: 10px;
 }
@@ -388,9 +398,9 @@ input[type="number"]{
 }
 .status1 p{
   font-weight: 400;
-  border: 1px solid #114765;
-  border-radius: 3px;
-  padding: 0px 2px;
+  border: 1px solid #bbbbbb;
+  border-radius: 5px;
+  padding: 5px;
 }
 .furnished{
   margin: 5px 10px;
@@ -405,6 +415,11 @@ input[type="number"]{
 }
 .furnished-dropbtn span{
   margin-left: 20px;
+}
+@media (max-width: 1169px){
+  #left-filter{
+    display: none;
+  } 
 }
 
 
@@ -477,8 +492,59 @@ input[type="number"]{
 
 @media (min-width: 1170px) and (max-width: 1290px){
   .templates{
-    display: grid;
+    /* display: grid; */
     margin: 5;
-    grid-template-columns: auto;
+    /* grid-template-columns: auto; */
+  }
+  #template-box{
+    width: 290px;
+    height: 220px;
+    margin: 12px;
+  }
+  #content-box {
+    width: 210px;
+    height: 80px;
+    margin: 46% 0% 0% 25%;
+    line-height: 1.2;
+  }
+  #content-box .temp-title{
+    padding: 5px 0px 0px 7px;
+    font-size: 15px;
+  }
+  #content-box .temp-title span{
+    font-weight: 400;
+    font-size: 12px;
+  }
+  #content-box .temp-icon {
+    font-size: 18px;
+  }
+}
+@media (max-width: 1169px){
+  .templates{
+    display: flex;
+    margin: 5;
+    flex-wrap: wrap;
+  }
+  #template-box{
+    width: 310px;
+    height: 240px;
+    margin: 15px;
+  }
+  #content-box {
+    width: 220px;
+    height: 90px;
+    margin: 46% 0% 0% 26%;
+    line-height: 1.1;
+  }
+  #content-box .temp-title{
+    padding: 5px 0px 0px 7px;
+    font-size: 17px;
+  }
+  #content-box .temp-title span{
+    font-weight: 400;
+    font-size: 13px;
+  }
+  #content-box .temp-icon {
+    font-size: 21px;
   }
 }
