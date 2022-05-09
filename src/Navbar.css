@@ -77,7 +77,11 @@
         width: 100vh;
       }
       .logo {
-        margin-left: 5px;
+        float: none;
+        align-items: center;
+      }
+      .logo img{
+        margin-left: 50px;
       }
 
   } @media(orientation: landscape) {

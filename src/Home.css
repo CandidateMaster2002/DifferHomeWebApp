@@ -91,7 +91,7 @@
         height : 100vh;
     }
     .tagline{
-        top: 10%;
+        top: 8%;
         left: 2%;
         right: 6%;
     }
@@ -104,7 +104,7 @@
     }
     .tagline h5{
         text-align: center;
-        margin-top: 80px;
+        margin-top: 50px;
         font-size: 25px;
     }
     .tagline h2, t2{
@@ -114,11 +114,11 @@
         font-size: 50px;
         text-align: center;
         margin-left: 0;
-        margin-top: 20px;
+        margin-top: 15px;
         left: 1%;
     }
     .three_lines_icons{
-        margin-top: 160px;
+        margin-top: 140px;
         width: 100%;
         color: #fff;
         left: 20%;
@@ -233,7 +233,7 @@
     }
     .reponsive_btn a{
         display: inline;
-        top: 58%;
+        top: 57%;
         margin-left: 35%;
         position: absolute;
         width: auto;

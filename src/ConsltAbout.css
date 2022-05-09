@@ -63,10 +63,10 @@
 @media (max-width:600px){
     .Consult_about {
         position: absolute;
-        margin-top: 330vh;
+        margin-top: 345vh;
         width: 100%;
         left: 2%;
-        right: 2%;
+        right: 0%;
         text-align: center;
         align-items: center;
     }
@@ -78,7 +78,7 @@
     }
     .conslt-boy-img img{
         width: 300px;
-        margin: 20px;
+        margin: 20px 0px;
         animation: up-down 2s ease-in-out infinite alternate-reverse both;
     }
     .about_part{

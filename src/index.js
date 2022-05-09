@@ -6,12 +6,15 @@ import {BrowserRouter} from 'react-router-dom';
 import reportWebVitals from './reportWebVitals';
 import { Routes, Route } from "react-router-dom";
 import Under_maintain from "./Under_maintain";
-import 'bootstrap/dist/css/bootstrap.min.css';
 import SecondPgNavFiltr from './SecondPgNavFiltr';
+import ThirdPage from './ThirdPage';
 
 import './Under_maintain.css';
 import './App.css';
 import './SecondPgNavFiltr.css';
+import './ThirdPage.css';
+
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 /*ReactDOM.render(
   <BrowserRouter>
@@ -27,6 +30,7 @@ import './SecondPgNavFiltr.css';
                <Route path="/under_maintainance" element={<Under_maintain />} />
                <Route exact path="/" element={<App />} />
                <Route path="/second-page" element={<SecondPgNavFiltr />} />
+               <Route path="/third-page" element={<ThirdPage />} />
                {/* <Route exact path="/about" element={<ConsltAbout />} />
                
                <Route exact path="/service" element={<Service />} /> */}

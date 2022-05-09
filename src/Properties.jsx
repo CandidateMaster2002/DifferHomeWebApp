@@ -8,7 +8,7 @@ const Properties = () => {
                     <div className="Properties_cards">
                        <div>
                        <div className="Properties_img">
-                            <a target="#" href=''>
+                            <a target="#" href='third-page'>
                             <img src='images/BHK.jpg' alt=" " />
                            </a>
                            <p>Single & Multi Room BHK</p>

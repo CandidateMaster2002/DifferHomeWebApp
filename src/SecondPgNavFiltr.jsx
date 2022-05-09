@@ -196,6 +196,21 @@ toggle between hiding and showing the dropdown content */
                     </form>
                 </div>
 
+                {/*-----mobile filter header view-----*/}
+
+                <div className="mob-filter-header">
+                    <div className="filter-btn">
+                        <a href="" ><p>Filters</p></a>
+                    </div>
+                    <div class="mob-search-container">
+                        <form action="/action_page.php">
+                            <a href="#home_"><FontAwesomeIcon icon={faSearch} /></a>
+                            <input id="search" type="text" placeholder="Enter city, state, locality, pincode" name="search" />
+                        </form>
+                    </div>
+
+                </div>
+
 
 
 
@@ -203,6 +218,8 @@ toggle between hiding and showing the dropdown content */
                     <div className="temp-3-row">
                         <div className="templates">
                             <div className="tempBox1" id="template-box">
+                             <a target='' href="third-page" >
+                             {/* <img src=""></img>  */} </a>
                                 <div className="contentBox1" id="content-box">
                                     <p className="temp-title">Gokul Apartment<br />
                                         <span>Manipur Colony, Manhattan, Dng...</span></p>
@@ -216,7 +233,7 @@ toggle between hiding and showing the dropdown content */
                                 <div className="contentBox2" id="content-box">
                                     <p className="temp-title">Gokul Villa<br />
                                         <span>Manipur Colony, Manhattan, Dng...</span></p>
-                                        <div className="temp-icon">
+                                    <div className="temp-icon">
                                         <span><FontAwesomeIcon icon={faBed} /> 3 </span>
                                         <span><FontAwesomeIcon icon={faIndianRupee} /> 75L </span>
                                     </div>
@@ -226,7 +243,7 @@ toggle between hiding and showing the dropdown content */
                                 <div className="contentBox3" id="content-box">
                                     <p className="temp-title">Gokul Bungalow<br />
                                         <span>Manipur Colony, Manhattan, Dng...</span></p>
-                                        <div className="temp-icon">
+                                    <div className="temp-icon">
                                         <span><FontAwesomeIcon icon={faBed} /> 3 </span>
                                         <span><FontAwesomeIcon icon={faIndianRupee} /> 75L </span>
                                     </div>
@@ -234,7 +251,7 @@ toggle between hiding and showing the dropdown content */
                             </div>
                         </div>
                         <div className="templates">
-                            <div className="tempBox1" id="template-box">
+                            <div className="tempBox4" id="template-box">
                                 <div className="contentBox1" id="content-box">
                                     <p className="temp-title">Gokul Apartment<br />
                                         <span>Manipur Colony, Manhattan, Dng...</span></p>
@@ -244,21 +261,21 @@ toggle between hiding and showing the dropdown content */
                                     </div>
                                 </div>
                             </div>
-                            <div className="tempBox2" id="template-box">
+                            <div className="tempBox5" id="template-box">
                                 <div className="contentBox2" id="content-box">
                                     <p className="temp-title">Gokul Villa<br />
                                         <span>Manipur Colony, Manhattan, Dng...</span></p>
-                                        <div className="temp-icon">
+                                    <div className="temp-icon">
                                         <span><FontAwesomeIcon icon={faBed} /> 3 </span>
                                         <span><FontAwesomeIcon icon={faIndianRupee} /> 75L </span>
                                     </div>
                                 </div>
                             </div>
-                            <div className="tempBox3" id="template-box">
+                            <div className="tempBox6" id="template-box">
                                 <div className="contentBox3" id="content-box">
                                     <p className="temp-title">Gokul Bungalow<br />
                                         <span>Manipur Colony, Manhattan, Dng...</span></p>
-                                        <div className="temp-icon">
+                                    <div className="temp-icon">
                                         <span><FontAwesomeIcon icon={faBed} /> 3 </span>
                                         <span><FontAwesomeIcon icon={faIndianRupee} /> 75L </span>
                                     </div>
