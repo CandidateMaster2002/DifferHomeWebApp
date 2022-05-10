@@ -48,6 +48,9 @@ const ThirdPage = () => {
 
                     </div>
                 </div>
+                <div className="mapBtn">
+                    <a href="">View Map</a>
+                </div>
                 <div className="prop-details">
                     <h2>Name of the Property</h2>
                     <p>Address of the property from state to particular locality and pin code too.</p>
