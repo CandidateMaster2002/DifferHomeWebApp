@@ -34,7 +34,7 @@ const Footer = () => {
             <span><FontAwesomeIcon icon={faPhone} /></span>
             <a href="tel:+919351822152"> (+91) 93518 22152 </a>
           </div>
-          <div className="icons">
+          <div className="Footericons">
             <a href="#"><img src='images/Icon awesome-facebook.png' /></a>
             <a href="#"><img src='images/Icon feather-instagram.png' /></a>
             <a href="#"><img src='images/Icon awesome-twitter.png' /></a>

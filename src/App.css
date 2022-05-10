@@ -2,4 +2,5 @@
 html{
     scroll-behavior: smooth;
     color: rgb(27, 27, 27);
+    overflow-x: hidden;
 }
