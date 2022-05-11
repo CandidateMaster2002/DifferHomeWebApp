@@ -376,13 +376,12 @@
         text-align: left;
     }
     .icons {
-        display: flex;
-        flex-wrap: wrap;
+        display: block;
         width: 90%
     }
     
     #icon {
-        margin: 5px 40px;
+        margin: 5px 10px;
     }
     .bhk h5 {
         margin-left: 0px;
