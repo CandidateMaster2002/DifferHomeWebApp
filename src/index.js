@@ -8,11 +8,13 @@ import { Routes, Route } from "react-router-dom";
 import Under_maintain from "./Under_maintain";
 import SecondPgNavFiltr from './SecondPgNavFiltr';
 import ThirdPage from './ThirdPage';
+import LoginPage from './LoginPage';
 
 import './Under_maintain.css';
 import './App.css';
 import './SecondPgNavFiltr.css';
 import './ThirdPage.css';
+import './LoginPage.css';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -31,6 +33,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
                <Route exact path="/" element={<App />} />
                <Route path="/second-page" element={<SecondPgNavFiltr />} />
                <Route path="/third-page" element={<ThirdPage />} />
+               <Route path="/login" element={<LoginPage />} />
                {/* <Route exact path="/about" element={<ConsltAbout />} />
                
                <Route exact path="/service" element={<Service />} /> */}

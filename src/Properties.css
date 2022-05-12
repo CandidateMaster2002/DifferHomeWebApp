@@ -11,7 +11,6 @@
     justify-content: space-between;
 }
 .Properties_cards :hover{
-    border: 1px solid #114765;
     box-shadow: 0 1px 10px rgb(133, 133, 133);
     border-radius: 20px;
 }
@@ -31,7 +30,7 @@
 .Properties_img p{
     color: #fff;
     font-size: 18px;
-    margin: 10px 0px;
+    margin: 10px 0px 0px 0px;
     padding-bottom: 5px;
 }
 /* .Properties_img :hover .hidden_text{
@@ -75,8 +74,8 @@
     .Properties_img p{
         color: #fff;
         font-size: 15px;
-        margin: 10px 0px;
-        padding-bottom: 8px;
+        margin: 10px 0px 12px 0px;
+        padding-bottom: 5px;
     }
 }
 @media (min-width:601px) and (max-width:1000px){
@@ -88,16 +87,16 @@
         margin: 20px 40px;
         flex-wrap: wrap;
         left: 5%;
+        justify-content: center;
     }
     .Properties_cards :hover{
-        border: #114765;
-        box-shadow: 0 1px 10px rgb(133, 133, 133);
+        box-shadow: none;
         border-radius: 20px;
     }
     .Properties_img{
         background-color: #114765;
         border-radius: 20px;
-
+        margin: 15px;
     }
     .Properties_img img{
         border-radius: 20px;
@@ -112,7 +111,7 @@
     .Properties_img p{
         color: #fff;
         font-size: 18px;
-        margin: 5px 0px;
+        margin: 5px 0px 0 0;
         padding-bottom: none;
     }
 }
