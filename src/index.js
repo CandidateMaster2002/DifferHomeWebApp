@@ -9,14 +9,14 @@ import Under_maintain from "./Under_maintain";
 import SecondPgNavFiltr from './SecondPgNavFiltr';
 import ThirdPage from './ThirdPage';
 import LoginPage from './LoginPage';
-// import AdminPortal from './AdminPortal';
+import AdminPortal from './AdminPortal';
 
 import './Under_maintain.css';
 import './App.css';
 import './SecondPgNavFiltr.css';
 import './ThirdPage.css';
 import './LoginPage.css';
-// import './AdminPortal.css';
+import './AdminPortal.css';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -36,7 +36,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
                <Route path="/second-page" element={<SecondPgNavFiltr />} />
                <Route path="/third-page" element={<ThirdPage />} />
                <Route path="/login" element={<LoginPage />} />
-               {/* <Route path="/admin" element={<AdminPortal />} /> */}
+               <Route path="/admin" element={<AdminPortal />} />
                {/* <Route exact path="/about" element={<ConsltAbout />} />
                
                <Route exact path="/service" element={<Service />} /> */}

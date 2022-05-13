@@ -41,7 +41,7 @@ toggle between hiding and showing the dropdown content */
                         <img src='images/light DH logo.png' alt='logo' />
                         {/* <a href="" > <img src="./../images/DH logo.png" alt="logo"></a> */}
                         {/* <!-- Logo Placeholder for Inlustration --> */}
-                        <a href="#home_"><b>Differ<strong>Home</strong></b></a>
+                        <a href="/"><b>Differ<strong>Home</strong></b></a>
                     </div>
 
                     {/* <!-- Navbar Links --> */}
@@ -120,8 +120,8 @@ toggle between hiding and showing the dropdown content */
                                 </div>
                             </div>
                         </div>
-                        <div className="Area">
-                            <p className="title">Area</p>
+                        <div className="Budget">
+                            <p className="title">Budget</p>
                             <input className="range-set" type="range" name="" id="" />
                             <div className="minMax">
                                 <div className="min"><label className="titleMin">Min</label>
@@ -134,8 +134,8 @@ toggle between hiding and showing the dropdown content */
 
                         </div>
                         <hr />
-                        <div className="Budget">
-                            <p className="title">Budget<span>sqft.</span></p>
+                        <div className="Area">
+                            <p className="title">Area<span>sqft.</span></p>
                             <input className="range-set" type="range" name="" id="" />
                             <div className="minMax">
                                 <div className="min"><label className="titleMin">Min</label>
@@ -155,7 +155,7 @@ toggle between hiding and showing the dropdown content */
                                 <label className="btype"><a href="">2</a></label>
                                 <label className="btype"><a href="">3</a></label>
                                 <label className="btype"><a href="">4</a></label>
-                                <label className="btype"><a href="">5+</a></label>
+                                <label className="btype"><a href="">4+</a></label>
                             </div>
                         </div>
 
@@ -218,7 +218,7 @@ toggle between hiding and showing the dropdown content */
                     <div className="temp-3-row">
                         <div className="templates">
                             <div className="tempBox1" id="template-box">
-                             <a target='' href="third-page" >
+                             <a href='third-page' >
                              {/* <img src=""></img>  */} </a>
                                 <div className="contentBox1" id="content-box">
                                     <p className="temp-title">Gokul Apartment<br />

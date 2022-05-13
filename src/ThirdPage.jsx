@@ -12,7 +12,7 @@ const ThirdPage = () => {
                         <img src='images/light DH logo.png' alt='logo' />
                         {/* <a href="" > <img src="./../images/DH logo.png" alt="logo"></a> */}
                         {/* <!-- Logo Placeholder for Inlustration --> */}
-                        <a href="#home_"><b>Differ<strong>Home</strong></b></a>
+                        <a href="/"><b>Differ<strong>Home</strong></b></a>
                     </div>
 
                     {/* <!-- Navbar Links --> */}

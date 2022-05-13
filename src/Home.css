@@ -210,7 +210,7 @@
     margin: 0%;
 }
 
-.searchbox a{
+.searchbox .startbtn a{
     width: auto;
     background-color: #114765;
     color: #fff;
@@ -221,12 +221,13 @@
     border: none;
     text-decoration: none;
 }
+.searchbox .startbtn a:hover{
+    background-color: #002e46;
+}
 .reponsive_btn a{
     display: none;
 }
-.searchbox a :hover{
-    background-color: #002e46;
-}
+
 @media (max-width:760px){
     .searchbox{
         display: none;

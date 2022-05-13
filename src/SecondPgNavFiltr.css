@@ -90,9 +90,9 @@
 
 .Sec-Navbar ul {
   display: inline-block;
-  /* float: right; */
+  float: right;
   list-style: none;
-  /* margin-right: 14px; */
+  margin-right: 14px;
   margin-top: -2px;
   text-align: right;
   font-weight: 500px;
@@ -364,14 +364,14 @@
   align-items: center;
 }
 
-.Area {
+.Budget {
   flex-grow: 1.5;
   align-items: left;
   width: auto;
   margin: 10px;
 }
 
-.Area p {
+.Budget p {
   font-weight: 600;
   margin-left: 15px;
 }
@@ -401,16 +401,16 @@ input[type="number"] {
   height: 20px;
 }
 
-.Budget {
+.Area {
   margin: 10px;
 }
 
-.Budget p {
+.Area p {
   font-weight: 600;
   margin-left: 15px;
 }
 
-.Budget p span {
+.Area p span {
   border: 1px solid #bbbbbb;
   padding: 2px;
   font-size: 12px;

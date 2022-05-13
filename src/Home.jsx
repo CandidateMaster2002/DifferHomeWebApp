@@ -122,11 +122,11 @@ const Home = () => {
 
                         </datalist> <br />
                     </div>
-                    <a href="second-page" class="start_btn">Start</a>
+                    <div className="startbtn"><a href="second-page" className="start_btn">Start</a></div>
                 </form>
             </div>
             <div className="reponsive_btn">
-                <a href="second-page" class="rsp_btn">Get Started</a>
+                <a href="second-page" className="rsp_btn">Get Started</a>
             </div>
 
             {/* one step solution part with boy sitting on sofa */}

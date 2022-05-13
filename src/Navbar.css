@@ -50,7 +50,7 @@
     align-content: center;
     text-decoration: none;
   } 
-  .logo :hover {
+  #navbar .logo :hover {
     text-decoration: none;
     color: #062e44;
   }
@@ -60,9 +60,9 @@
   
   #navbar ul {
     display: inline-block;
-    /* float: right; */
+    float: right;
     list-style: none;
-    /* margin-right: 14px; */
+    margin-right: 14px;
     margin-top: -2px;
     text-align: right;
     font-weight: 500px;
@@ -92,6 +92,7 @@
   
   #navbar li {
     display: inline-block;
+    float: right;
   }
   
   #navbar li a {
