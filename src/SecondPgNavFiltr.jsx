@@ -97,9 +97,9 @@ toggle between hiding and showing the dropdown content */
                                 <button className="resdropbtn" /*onclick={resDropFn()}*/ >Residental
                                     <span><FontAwesomeIcon icon={faCaretDown} /></span></button>
                                 {/* <div className="dropdown-content" id="resDropdown">
-                                <a href="#">Link 1</a>
-                                <a href="#">Link 2</a>
-                                <a href="#">Link 3</a>
+                                <a href="#">Residental</a>
+                                <a href="#">Commertial</a>
+                                <a href="#">Resi-Comm</a>
                             </div> */}
                             </div>
                         </div>
@@ -151,11 +151,11 @@ toggle between hiding and showing the dropdown content */
                         <div className="bhk">
                             <p className="title">BHKs</p>
                             <div className="bhkTypes">
-                                <label className="btype">1</label>
-                                <label className="btype">2</label>
-                                <label className="btype">3</label>
-                                <label className="btype">4</label>
-                                <label className="btype">5+</label>
+                                <label className="btype"><a href="">1</a></label>
+                                <label className="btype"><a href="">2</a></label>
+                                <label className="btype"><a href="">3</a></label>
+                                <label className="btype"><a href="">4</a></label>
+                                <label className="btype"><a href="">5+</a></label>
                             </div>
                         </div>
 

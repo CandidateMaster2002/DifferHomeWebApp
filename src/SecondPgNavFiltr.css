@@ -439,6 +439,13 @@ input[type="number"] {
   padding: 2px 10px;
   margin: 5px;
 }
+.bhkTypes label:hover{
+  background-color: #bbbbbb;
+}
+.bhkTypes label a{
+  text-decoration: none;
+  color: rgb(53, 53, 53);
+}
 
 .propertyAge {
   margin: 10px;

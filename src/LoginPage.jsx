@@ -9,11 +9,11 @@ const LoginPage = () => {
 
                 <form action="/action_page.php" method="post">
                     <div className="AvtarImg">
-                        <img src="" alt="Avatar" className="avatar" />
+                        <img src="images/avatarImg.png" alt="Avatar" className="avatar" />
                     </div>
 
                     <div className="LoginBox">
-                        <label for="uname"><b>Username</b></label>
+                        <label for="uname"><b>User Name</b></label>
                         <input type="text" placeholder="Enter Username" name="uname" required />
 
                         <label for="psw"><b>Password</b></label>
@@ -21,13 +21,13 @@ const LoginPage = () => {
 
                         <button type="submit">Login</button>
                         <label>
-                            <input type="checkbox" checked="checked" name="remember" /> Remember me
+                            <input type="checkbox" checked="check" name="remember" /> Remember me
                         </label>
                     </div>
 
                     <div className="LoginBottom">
                         <button type="button" className="cancelbtn">Cancel</button>
-                        <span className="psw">Forgot <a href="#">password?</a></span>
+                        <span className="forgetPsw">Forgot <a href="#">password?</a></span>
                     </div>
                 </form>
             </div>

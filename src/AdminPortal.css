@@ -1,0 +1,193 @@
+.AdminHeader{
+    margin: 35px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 2px solid #dbdbdb;
+}
+.AdminHeader h1{
+    margin: -15px 0px 25px 20px;
+    color: #114765;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.addBtn a{
+    margin-right: 25px;
+    text-decoration: none;
+    background-color: #114765;
+    padding: 7px 20px;
+    border-radius: 5px;
+    color: #ffff;
+}
+.addBtn a:hover{
+    background-color: #00334e;
+}
+.adminFormDetails{
+    display: flex;
+    width: 100%;
+}
+.adminForm{
+    width: 70%;
+    margin: 10px 5px 10px 30px;
+}
+.adminMap{
+    margin: 30px;
+    width: 30%;
+}
+.mapBox{
+    border: 1px solid #bbbbbb;
+    margin: 10px 15px 10px 0px;
+    border-radius: 10px;
+    width: 400px;
+    height: 350px;
+}
+.adminForm b{
+    color: rgb(59, 59, 59);
+    font-weight: 400;
+}
+.adminForm .propName input[type="text"]{
+    width: 80%;
+}
+.adminForm form input{
+    margin: 5px;
+    border: 1px solid #acacac;
+}
+.adminForm select{
+    margin: 5px 80px 5px 10px;
+    border: 1px solid #acacac;
+    padding: 2px 10px;
+    width: 200px;
+}
+.adminForm .Location input{
+    width: 200px;
+    margin: 5px 112px 5px 10px;
+}
+.adminForm .Pincode input{
+    width: 200px;
+    margin: 5px 0px 5px 46px;
+}
+.adminForm .Address input{
+    width: 80%;
+    margin: 5px 0px 5px 46px;
+}
+.adminForm .Area{
+    display: flex;
+}
+.adminForm .Area .area1 input{
+    width: 100px;
+    margin: 5px 5px 0px 60px;
+}
+.adminForm .Area .area2{
+    margin: 5px 5px 0px 125px;
+}
+.adminForm .Area .area2 input{
+    width: 100px;
+}
+.adminForm .Price{
+    display: flex;
+}
+.adminForm .Price .price1 input{
+    width: 100px;
+    margin: 5px 5px 0px 65px;
+}
+.adminForm .Price .price2{
+    margin: 5px 5px 0px 155px;
+}
+.adminForm .Price .price2 input{
+    width: 100px;
+}
+.adminForm .BedBath{
+    margin: 5px;
+    display: flex;
+}
+.adminForm .BedBath #rooms a{
+    text-decoration: none;
+    border: 1px solid #acacac;
+    border-radius: 5px;
+    padding: 5px 10px;
+    margin: 5px;
+    color: rgb(59, 59, 59);
+}
+.adminForm .BedBath #rooms a:hover{
+    background-color: #d2d2d2;
+}
+.adminForm .BedBath .Bedroom label{
+    margin: 5px 27px 0px 0px;
+}
+.adminForm .BedBath .Bathroom label{
+    margin: 5px 5px 0px 60px;
+}
+.RegisterPropAge{
+    display: flex;
+}
+.adminForm .RegisterPropAge .Register label{
+    margin: 5px 5px 0px 5px;
+}
+.adminForm .RegisterPropAge .Register input{
+    width: 100px;
+}
+.adminForm .RegisterPropAge .PropAge{
+    margin: 5px;
+}
+.adminForm .RegisterPropAge .PropAge label{
+    margin: 5px 5px 0px 135px;
+}
+.adminForm .RegisterPropAge .PropAge a{
+    text-decoration: none;
+    border: 1px solid #acacac;
+    border-radius: 5px;
+    padding: 3px 5px;
+    margin: 5px;
+    color: rgb(59, 59, 59);
+}
+.adminForm .RegisterPropAge .PropAge a:hover{
+    background-color: #d2d2d2;
+}
+.adminForm .Status{
+    display: flex;
+}
+.adminForm .Status input{
+    width: 100px;
+}
+.adminForm .Status .MovStatus label{
+    margin: 5px 12px 0px 5px;
+}
+.adminForm .Status .FurStatus label{
+    margin: 5px 5px 0px 140px;
+}
+.adminForm .About textarea{
+    width: 60%;
+    border: 1px solid #acacac;
+    margin: 10px 0px 0px 60px;
+}
+.adminForm .Uploads{
+    width: 20%;
+}
+.adminForm .Uploads div{
+    margin: 10px;
+}
+.adminForm .Uploads a{
+    text-decoration: none;
+    padding: 3px 8px;
+    border: 1px solid #acacac;
+    border-radius: 5px;
+    font-size: 13px;
+    color: rgb(59, 59, 59);
+    float: right;
+}
+.adminForm .Uploads a:hover{
+    background-color: #ececec;
+}
+.adminForm .SubmitBtn{
+    margin: 30px 10px 10px 10px;
+}
+.adminForm .SubmitBtn a{
+    text-decoration: none;
+    padding: 5px 25px;
+    border: none;
+    border-radius: 5px;
+    color: #ffffff;
+    background-color: #384FE9;
+}
+.adminForm .SubmitBtn a:hover{
+    background-color: #051cb7;
+}
