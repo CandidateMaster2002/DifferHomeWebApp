@@ -37,7 +37,7 @@ const Home = () => {
 
             <div className="searchbox" data-aos="fade-left" data-aos-duration="2000">
                 <h4>Looking For :</h4>
-                <form action="/action_page.php">
+                <form action="/filter1" method="get">
                     <input type="radio" id="apartment" name="opt-1" value="Apartment" />
                     <label for="Apartment">Apartment</label>
                     <input type="radio" id="villa" name="opt-2" value="Villa" />

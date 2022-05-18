@@ -60,7 +60,6 @@
   
   #navbar ul {
     display: inline-block;
-    float: right;
     list-style: none;
     margin-right: 14px;
     margin-top: -2px;
@@ -92,7 +91,6 @@
   
   #navbar li {
     display: inline-block;
-    float: right;
   }
   
   #navbar li a {
