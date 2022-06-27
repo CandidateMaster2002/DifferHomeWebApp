@@ -122,11 +122,11 @@ const Home = () => {
 
                         </datalist> <br />
                     </div>
-                    <div className="startbtn"><a href="profile-page" className="start_btn">Start</a></div>
+                    <div className="startbtn"><a href="under_maintainance" className="start_btn">Start</a></div>
                 </form>
             </div>
             <div className="reponsive_btn">
-                <a href="profile-page" className="rsp_btn">Get Started</a>
+                <a href="under_maintainance" className="rsp_btn">Get Started</a>
             </div>
 
             {/* one step solution part with boy sitting on sofa */}
@@ -141,7 +141,7 @@ const Home = () => {
                         either it is locating the perfect dream home to building
                         a new one, we provide all the services just in here.
                     </p>
-                    <a href="profile-page" class="button_1">Get Started</a>
+                    <a href="under_maintainance" class="button_1">Get Started</a>
                     <a href="#contactus" class="button_2">Contact Us</a>
                 </div>
                 <div className="sofa-boy-img">
