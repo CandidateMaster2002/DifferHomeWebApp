@@ -155,62 +155,17 @@
     .responsive_img_scroll::-webkit-scrollbar {
        display: none;
     }
-    .img_p1{
+    .cityImg{
         display: inline-block;
     }
-    .img_p1 img{
+    .cityImg img{
         margin: 10px;
         width: 250px;
         height: 200px;
         border-radius: 10px;
         left: 0;
     }
-    .img_p1 p{
-        text-align: center;
-        font-size: 20px;
-        padding: 0px;
-    }
-    .img_p2{
-        display: inline-block;
-    }
-    .img_p2 img{
-        margin: 10px;
-        width: 250px;
-        height: 200px;
-        border-radius: 10px;
-        left: 0;
-    }
-    .img_p2 p{
-        text-align: center;
-        font-size: 20px;
-        padding: 0px;
-    }
-    .img_p3{
-        display: inline-block;
-    }
-    .img_p3 img{
-        margin: 10px;
-        width: 250px;
-        height: 200px;
-        border-radius: 10px;
-        left: 0;
-    }
-    .img_p3 p{
-        text-align: center;
-        font-size: 20px;
-        padding: 0px;
-    }
-    .img_p4{
-        display: inline-block;
-    }
-    .img_p4 img{
-        margin: 10px;
-        width: 250px;
-        height: 200px;
-        border-radius: 10px;
-        left: 0;
-    }
-    .img_p4 p{
+    .cityImg p{
         text-align: center;
         font-size: 20px;
         padding: 0px;
@@ -246,62 +201,17 @@
     .responsive_img_scroll::-webkit-scrollbar {
        display: none;
     }
-    .img_p1{
+    .cityImg{
         display: inline-block;
     }
-    .img_p1 img{
+    .cityImg img{
         margin: 10px;
         width: 250px;
         height: 200px;
         border-radius: 10px;
         left: 0;
     }
-    .img_p1 p{
-        text-align: center;
-        font-size: 20px;
-        padding: 0px;
-    }
-    .img_p2{
-        display: inline-block;
-    }
-    .img_p2 img{
-        margin: 10px;
-        width: 250px;
-        height: 200px;
-        border-radius: 10px;
-        left: 0;
-    }
-    .img_p2 p{
-        text-align: center;
-        font-size: 20px;
-        padding: 0px;
-    }
-    .img_p3{
-        display: inline-block;
-    }
-    .img_p3 img{
-        margin: 10px;
-        width: 250px;
-        height: 200px;
-        border-radius: 10px;
-        left: 0;
-    }
-    .img_p3 p{
-        text-align: center;
-        font-size: 20px;
-        padding: 0px;
-    }
-    .img_p4{
-        display: inline-block;
-    }
-    .img_p4 img{
-        margin: 10px;
-        width: 250px;
-        height: 200px;
-        border-radius: 10px;
-        left: 0;
-    }
-    .img_p4 p{
+    .cityImg p{
         text-align: center;
         font-size: 20px;
         padding: 0px;

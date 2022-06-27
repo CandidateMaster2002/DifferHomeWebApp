@@ -33,7 +33,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
     <Routes>
                <Route path="/under_maintainance" element={<Under_maintain />} />
                <Route exact path="/" element={<App />} />
-               <Route path="/second-page" element={<SecondPgNavFiltr />} />
+               <Route path="/profile-page" element={<SecondPgNavFiltr />} />
                <Route path="/third-page" element={<ThirdPage />} />
                <Route path="/login" element={<LoginPage />} />
                <Route path="/admin" element={<AdminPortal />} />
