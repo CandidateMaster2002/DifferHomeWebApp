@@ -211,31 +211,8 @@ toggle between hiding and showing the dropdown content */
                     </div>
 
                 </div>
-
-
-
-                <TempIndex />
-                {/* <div id="right-temp">
-                    <div className="temp-3-row">
-                        <div className="templates">
-                            <div className="tempBox1" id="template-box">
-                             <a href='third-page' >
-                             {/* <img src=""></img> </a>
-                                <div className="contentBox1" id="content-box">
-                                    <p className="temp-title">Gokul Apartment<br />
-                                        <span>Manipur Colony, Manhattan, Dng...</span></p>
-                                    <div className="temp-icon">
-                                        <span><FontAwesomeIcon icon={faBed} /> 3 </span>
-                                        <span><FontAwesomeIcon icon={faIndianRupee} /> 75L </span>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                        </div>
-                    </div>
-
-                </div> */}
-
+                
+             <TempIndex />
             </div>
         </>
     )

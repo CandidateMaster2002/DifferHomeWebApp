@@ -1,70 +1,67 @@
 #right-temp {
-    align-items: center;
-    text-align: center;
-    flex-grow: 8;
     position: relative;
+    left: 25%;
   }
   
   .templates {
-    display: flex;
+    align-content: right;
+    display: grid;
+    grid: auto / auto auto auto;
+    grid-gap: 5px;
     justify-content: center;
+    width : 60%;
   }
   
-  #template-box {
+.tempBox {
     background-color: #114765;
     border-radius: 10px;
     width: 350px;
     height: 300px;
     margin: 15px;
   }
-   #template-box img{
+ .tempBox img{
     border-radius: 10px;
     width: 350px;
     height: 300px;
-    z-index: 1;
   } 
   
-  #content-box {
-    background-color: rgba(255, 255, 255, 0.723);
+  .contentBox {
+    background: rgba(255, 255, 255, 0.723);
     border-radius: 5px;
     width: 230px;
     height: 90px;
-    margin: 58% 0% 0% 32%;
-    z-index: 5;
+    margin: -26% 0% 0% 29%;
+    z-index: 1;
     line-height: 1.1;
+    position: absolute;
   }
   
-  #content-box .temp-title {
+  .contentBox .temp-title {
     font-weight: bold;
     text-align: left;
     padding: 5px 0px 0px 7px;
     font-size: 18px;
   }
   
-  #content-box .temp-title span {
+  .contentBox .temp-title span {
     font-weight: 500;
     text-align: left;
     font-size: 13px;
-    background: none;
   }
-  
-  .temp-icon {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    background: none;
-    margin: none;
-  }
-  
-  #content-box .temp-icon {
-    font-size: 25px;
+
+  .contentBox .temp-icon {
+    font-size: 22px;
     font-weight: bold;
     position: inherit;
     line-height: 0.1;
+    display: flex;
+    align-items: left;
+    justify-content: center;
+    margin: 0 10px ;
   }
   
   .temp-icon span {
-    margin: 0px 20px;
+    margin: 0px 10px;
     margin-top: -10px;
   }
   
@@ -78,30 +75,30 @@
       margin: 5;
     }
   
-    #template-box {
+  .tempBox {
       width: 290px;
       height: 220px;
       margin: 12px;
     }
   
-    #content-box {
+    .contentBox {
       width: 210px;
       height: 80px;
       margin: 46% 0% 0% 25%;
       line-height: 1.2;
     }
   
-    #content-box .temp-title {
+    .contentBox .temp-title {
       padding: 5px 0px 0px 7px;
       font-size: 15px;
     }
   
-    #content-box .temp-title span {
+    .contentBox .temp-title span {
       font-weight: 400;
       font-size: 12px;
     }
   
-    #content-box .temp-icon {
+    .contentBox .temp-icon {
       font-size: 18px;
     }
   }
@@ -113,30 +110,30 @@
       flex-wrap: wrap;
     }
   
-    #template-box {
+  .tempBox {
       width: 310px;
       height: 240px;
       margin: 15px;
     }
   
-    #content-box {
+    .contentBox {
       width: 220px;
       height: 90px;
       margin: 46% 0% 0% 26%;
       line-height: 1.1;
     }
   
-    #content-box .temp-title {
+    .contentBox .temp-title {
       padding: 5px 0px 0px 7px;
       font-size: 17px;
     }
   
-    #content-box .temp-title span {
+    .contentBox .temp-title span {
       font-weight: 400;
       font-size: 13px;
     }
   
-    #content-box .temp-icon {
+    .contentBox .temp-icon {
       font-size: 21px;
     }
   }

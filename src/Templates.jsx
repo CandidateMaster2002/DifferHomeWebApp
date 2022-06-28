@@ -8,9 +8,9 @@ function Template(_props) {
         <>
             <div id="right-temp">
                 <div className="templates">
-                    <div className="tempBox1" id="template-box">
-                        <a href='third-page' ><img src={_props.imgsrc} /></a>
-                        <div className="contentBox1" id="content-box">
+                    <div className="tempBox">
+                        <a href='third-page' ><img src={_props.imgsrc} alt="Property Image"/></a>
+                        <div className="contentBox">
                             <p className="temp-title">{_props.title}<br />
                                 <span>{_props.address}</span></p>
                             <div className="temp-icon">
