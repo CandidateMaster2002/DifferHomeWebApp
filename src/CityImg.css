@@ -155,17 +155,17 @@
     .responsive_img_scroll::-webkit-scrollbar {
        display: none;
     }
-    .cityImg{
+    #cityImg{
         display: inline-block;
     }
-    .cityImg img{
+    #cityImg img{
         margin: 10px;
         width: 250px;
         height: 200px;
         border-radius: 10px;
         left: 0;
     }
-    .cityImg p{
+    #cityImg p{
         text-align: center;
         font-size: 20px;
         padding: 0px;
@@ -178,7 +178,7 @@
 
     .city_img_responsive{
         position: absolute;
-        top: 250vh;
+        top: 200vh;
         width: 100%;
         left: 0%;
         margin: 0px 10px;
@@ -201,17 +201,17 @@
     .responsive_img_scroll::-webkit-scrollbar {
        display: none;
     }
-    .cityImg{
+    #cityImg{
         display: inline-block;
     }
-    .cityImg img{
+    #cityImg img{
         margin: 10px;
         width: 250px;
         height: 200px;
         border-radius: 10px;
         left: 0;
     }
-    .cityImg p{
+    #cityImg p{
         text-align: center;
         font-size: 20px;
         padding: 0px;

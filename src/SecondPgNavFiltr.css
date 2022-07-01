@@ -287,8 +287,7 @@
   border: 1px ridge;
   border-color: #dadada;
   width: 10% fixed;
-  overflow-x: hidden;
-  overflow-y: auto;
+  overflow-y: scroll;
   position: fixed;
 }
 

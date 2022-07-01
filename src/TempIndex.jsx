@@ -11,6 +11,7 @@ const TempIndex = () => {
             {Tempdata.map((val) => {
                 return (
                     <Template
+                        key={val.id}
                         imgsrc={val.imgsrc}
                         title={val.title}
                         address={val.address}

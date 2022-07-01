@@ -1,6 +1,6 @@
 #right-temp {
     position: relative;
-    left: 25%;
+    left: 27%;
   }
   
   .templates {
@@ -30,7 +30,7 @@
     border-radius: 5px;
     width: 230px;
     height: 90px;
-    margin: -26% 0% 0% 29%;
+    margin: -25% 0% 0% 29%;
     z-index: 1;
     line-height: 1.1;
     position: absolute;
