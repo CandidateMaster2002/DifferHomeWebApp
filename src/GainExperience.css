@@ -4,6 +4,7 @@
     width: 85%;
     left: 10%;
     text-align: center;
+    scroll-behavior: smooth;
 }
 .Gain_Exp{
     margin: 40px 10px;

@@ -4,6 +4,7 @@
     width: 90%;
     left: 5%;
     text-align: center;
+    scroll-behavior: smooth;
 }
 .Properties_cards{
     margin: 50px 10px;

@@ -5,6 +5,7 @@
     left: 6%;
     text-align: center;
     display: flex;
+    scroll-behavior: smooth;
 }
 .images_1{
     display: flex;

@@ -3,6 +3,7 @@
     margin-top: 410vh;
     width: 80%;
     left: 6%;
+    scroll-behavior: smooth;
 }
 .Consult_part{
     display: flex;
