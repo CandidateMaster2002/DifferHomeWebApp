@@ -1,6 +1,6 @@
 #right-temp {
     position: relative;
-    left: 27%;
+    left: 22%;
   }
   
   .templates {
@@ -30,7 +30,7 @@
     border-radius: 5px;
     width: 230px;
     height: 90px;
-    margin: -25% 0% 0% 29%;
+    margin: -24% 0% 0% 28%;
     z-index: 1;
     line-height: 1.1;
     position: absolute;
@@ -80,12 +80,21 @@
       height: 220px;
       margin: 12px;
     }
+    .tempBox img{
+      border-radius: 10px;
+      width: 290px;
+      height: 220px;
+    } 
   
     .contentBox {
+      background: rgba(255, 255, 255, 0.723);
+      border-radius: 5px;
       width: 210px;
       height: 80px;
-      margin: 46% 0% 0% 25%;
-      line-height: 1.2;
+      margin: -26% 0% 0% 23%;
+      z-index: 1;
+      line-height: 1.1;
+      position: absolute;
     }
   
     .contentBox .temp-title {
@@ -104,23 +113,41 @@
   }
   
   @media (max-width: 1169px) {
+    #right-temp {
+      position: relative;
+      left: 5%;
+      align-items: center;   
+    }
+
     .templates {
-      display: flex;
-      margin: 5;
-      flex-wrap: wrap;
+      margin: 5px; 
+      flex: auto;    
     }
   
   .tempBox {
       width: 310px;
       height: 240px;
-      margin: 15px;
+      margin: 5px;
+      left: 5%;
+      align-items: center;     
     }
-  
+ 
+    .tempBox img{
+      border-radius: 10px;
+      width: 310px;
+      height: 240px;
+
+    } 
+
     .contentBox {
+      background: rgba(255, 255, 255, 0.723);
+      border-radius: 5px;
       width: 220px;
       height: 90px;
-      margin: 46% 0% 0% 26%;
+      margin: -29% 0% 0% 24%;
+      z-index: 1;
       line-height: 1.1;
+      position: absolute;
     }
   
     .contentBox .temp-title {
@@ -138,39 +165,4 @@
     }
   }
   
-  @media (max-width: 700px) {
-    #right-temp {
-      margin-top: 50px;
-    }
   
-    .mob-filter-header {
-      display: flex;
-      justify-content: space-between;
-    }
-  
-    .mob-search-container {
-      display: flex;
-      float: right;
-      margin: 2px 15px 2px 0px;
-    }
-  
-    .mob-search-container input[type=text] {
-      padding: 6px;
-      margin-top: 6px;
-      margin-bottom: 5px;
-      font-size: 15px;
-      height: 30px;
-      width: 200px;
-      border-radius: 5px;
-      border: 1px solid #114765;
-    }
-  
-    .mob-search-container a {
-      padding: 6px 5px;
-      margin: 6px 0px 6px 0px;
-      height: 30px;
-      border-radius: 5px;
-      background: none;
-      color: #114765;
-    }
-  }

@@ -46,7 +46,7 @@ const CityImg = () => {
             the nation and do not stop until you have found your
             dream home</p>
 
-          <a href="profile-page" class="button_1">Explore Properties</a>
+          <a href="profile-page" className="button_1">Explore Properties</a>
         </div>
 
       </div>

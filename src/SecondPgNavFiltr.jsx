@@ -6,30 +6,27 @@ import "aos/dist/aos.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBed, faCaretDown, faIndianRupee, faSearch } from "@fortawesome/free-solid-svg-icons";
 
+// function sortlist() {
+//     document.getElementById("mySortlist").classList.toggle("show");
+//   }
 
+/* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+// function resDropFn() {
+//     document.getElementById("resDropdown").classList.toggle("show");
+// }
+
+// // Close the dropdown if the user clicks outside of it
+// window.onclick = function (e) {
+//     if (!e.target.matches('.resdropbtn')) {
+//         var resDropdown = document.getElementById("resDropdown");
+//         if (resDropdown.classList.contains('show')) {
+//             resDropdown.classList.remove('show');
+//         }
+//     }
+// }
 
 const SecondPgNavFiltr = () => {
-    // function sortlist() {
-    //     document.getElementById("mySortlist").classList.toggle("show");
-    //   }
-
-    /* When the user clicks on the button, 
-toggle between hiding and showing the dropdown content */
-    // function resDropFn() {
-    //     document.getElementById("resDropdown").classList.toggle("show");
-    // }
-
-    // // Close the dropdown if the user clicks outside of it
-    // window.onclick = function (e) {
-    //     if (!e.target.matches('.resdropbtn')) {
-    //         var resDropdown = document.getElementById("resDropdown");
-    //         if (resDropdown.classList.contains('show')) {
-    //             resDropdown.classList.remove('show');
-    //         }
-    //     }
-    // }
-
-
     useEffect(() => {
         Aos.init();
     }, [])
@@ -49,7 +46,7 @@ toggle between hiding and showing the dropdown content */
 
                     <div data-aos="fade-down" data-aos-duration="2000">
                         <ul id="menu">
-                            <div class="search-container">
+                            <div className="search-container">
                                 <form action="/action_page.php">
                                     <a href="#home_"><FontAwesomeIcon icon={faSearch} /></a>
                                     <input id="search" type="text" placeholder="Enter city, state, locality, pincode" name="search" />
@@ -73,146 +70,151 @@ toggle between hiding and showing the dropdown content */
                 </div>
             </div>
 
-            <div className="filter-header">
-                <div className="filter_heading">
-                    <h5>Filters</h5>
+            <div className="filterHeading-parent">
+                <div className="filter-header">
+                    <div className="filter_heading">
+                        <h5>Filters</h5>
+                    </div>
+                    <div className="quote">
+                        <h3>Find Your Dream Home</h3>
+                        <p>32 Properties Found</p>
+                    </div>
+                    <div className="sortby_btn">
+                        {/* <button onclick={sortlist()} className="sortbtn">Dropdown</button> */}
+                        {/* <div id="mySortlist" className="dropdown-content"> */}
+                        {/* <a href="#">Price</a> */}
+                        {/* </div> */}
+                    </div>
                 </div>
-                <div className="quote">
-                    <h3>Find Your Dream Home</h3>
-                    <p>32 Properties Found</p>
+            </div>
+            {/*-----mobile filter header view-----*/}
+
+            <div className="mob-filter-header">
+                <div className="filter-btn">
+                    <a href="" ><p>Filters</p></a>
                 </div>
-                <div className="sortby_btn">
-                    {/* <button onclick={sortlist()} class="sortbtn">Dropdown</button> */}
-                    {/* <div id="mySortlist" class="dropdown-content"> */}
-                    {/* <a href="#">Price</a> */}
-                    {/* </div> */}
+                <div className="mob-search-container">
+                    <form action="/action_page.php">
+                        <a href="#home_"><FontAwesomeIcon icon={faSearch} /></a>
+                        <input id="search" type="text" placeholder="Enter city, state, locality, pincode" name="search" />
+                    </form>
                 </div>
+
             </div>
 
             <div className="filter_temp">
-                <div id="left-filter">
-                    <form>
-                        <div className="areaType">
-                            <p className="title">Area Type</p>
-                            <div className="residental_dropdown">
-                                <button className="resdropbtn" /*onclick={resDropFn()}*/ >Residental
-                                    <span><FontAwesomeIcon icon={faCaretDown} /></span></button>
-                                {/* <div className="dropdown-content" id="resDropdown">
+                <div className="left-filter-parent">
+                    <div id="left-filter">
+                        <form>
+                            <div className="areaType">
+                                <p className="title">Area Type</p>
+                                <div className="residental_dropdown">
+                                    <button className="resdropbtn" /*onclick={resDropFn()}*/ >Residental
+                                        <span><FontAwesomeIcon icon={faCaretDown} /></span></button>
+                                    {/* <div className="dropdown-content" id="resDropdown">
                                 <a href="#">Residental</a>
                                 <a href="#">Commertial</a>
                                 <a href="#">Resi-Comm</a>
                             </div> */}
-                            </div>
-                        </div>
-                        <div className="propertyType">
-                            <p className="title">Property Type</p>
-                            <div className="propIcons">
-                                <div className="Icon">
-                                    <a href="#"> <img src='images/apartmentIcon.png' alt=" " />
-                                        <p className="iconName">Apartments</p> </a>
-                                </div>
-                                <div className="Icon">
-                                    <a href="#"> <img src='images/bunglowIcon.png' alt=" " />
-                                        <p className="iconName">Bungalow</p> </a>
-                                </div>
-                                <div className="Icon">
-                                    <a href="#"> <img src='images/plotIcon.png' alt=" " />
-                                        <p className="iconName">Plot/Villa</p> </a>
                                 </div>
                             </div>
-                        </div>
-                        <div className="Budget">
-                            <p className="title">Budget</p>
-                            <input className="range-set" type="range" name="" id="" />
-                            <div className="minMax">
-                                <div className="min"><label className="titleMin">Min</label>
-                                    <input type="number" name="" id="" value="1" />
+                            <div className="propertyType">
+                                <p className="title">Property Type</p>
+                                <div className="propIcons">
+                                    <div className="Icon">
+                                        <a href="#"> <img src='images/apartmentIcon.png' alt=" " />
+                                            <p className="iconName">Apartments</p> </a>
+                                    </div>
+                                    <div className="Icon">
+                                        <a href="#"> <img src='images/bunglowIcon.png' alt=" " />
+                                            <p className="iconName">Bungalow</p> </a>
+                                    </div>
+                                    <div className="Icon">
+                                        <a href="#"> <img src='images/plotIcon.png' alt=" " />
+                                            <p className="iconName">Plot/Villa</p> </a>
+                                    </div>
                                 </div>
-                                <div className="max"><label className="titleMax">Max</label>
-                                    <input type="number" name="" id="" value="1000000" />
+                            </div>
+                            <div className="Budget">
+                                <p className="title">Budget</p>
+                                <input className="range-set" type="range" name="" id="" />
+                                <div className="minMax">
+                                    <div className="min"><label className="titleMin">Min</label>
+                                        <input type="number" name="" id="" value="1" />
+                                    </div>
+                                    <div className="max"><label className="titleMax">Max</label>
+                                        <input type="number" name="" id="" value="1000000" />
+                                    </div>
+                                </div>
+
+                            </div>
+                            <hr />
+                            <div className="Area">
+                                <p className="title">Area<span>sqft.</span></p>
+                                <input className="range-set" type="range" name="" id="" />
+                                <div className="minMax">
+                                    <div className="min"><label className="titleMin">Min</label>
+                                        <input type="number" name="" id="" value="1" />
+                                    </div>
+                                    <div className="max"><label className="titleMax">Max</label>
+                                        <input type="number" name="" id="" value="1000000" />
+                                    </div>
                                 </div>
                             </div>
 
-                        </div>
-                        <hr />
-                        <div className="Area">
-                            <p className="title">Area<span>sqft.</span></p>
-                            <input className="range-set" type="range" name="" id="" />
-                            <div className="minMax">
-                                <div className="min"><label className="titleMin">Min</label>
-                                    <input type="number" name="" id="" value="1" />
-                                </div>
-                                <div className="max"><label className="titleMax">Max</label>
-                                    <input type="number" name="" id="" value="1000000" />
+                            <hr />
+                            <div className="bhk">
+                                <p className="title">BHKs</p>
+                                <div className="bhkTypes">
+                                    <label className="btype"><a href="">1</a></label>
+                                    <label className="btype"><a href="">2</a></label>
+                                    <label className="btype"><a href="">3</a></label>
+                                    <label className="btype"><a href="">4</a></label>
+                                    <label className="btype"><a href="">4+</a></label>
                                 </div>
                             </div>
-                        </div>
 
-                        <hr />
-                        <div className="bhk">
-                            <p className="title">BHKs</p>
-                            <div className="bhkTypes">
-                                <label className="btype"><a href="">1</a></label>
-                                <label className="btype"><a href="">2</a></label>
-                                <label className="btype"><a href="">3</a></label>
-                                <label className="btype"><a href="">4</a></label>
-                                <label className="btype"><a href="">4+</a></label>
-                            </div>
-                        </div>
-
-                        <hr />
-                        <div className="propertyAge">
-                            <p className="title">Property Age</p>
-                            <div className="ageChecks">
-                                <div className="check1"><input type="checkbox" name="" id="" /><label>0-2 Years</label></div>
-                                <div className="check1"><input type="checkbox" name="" id="" /><label>2-5 Years</label></div>
-                                <div className="check1"><input type="checkbox" name="" id="" /><label>5-10 Years</label></div>
-                                <div className="check1"><input type="checkbox" name="" id="" /><label>10+ Years</label></div>
-                            </div>
-                        </div>
-
-                        <hr />
-                        <div className="propertyStatus">
-                            <p className="title">Property Status</p>
-                            <div className="statusBox">
-                                <div className="status1">
-                                    <a href=""><p>Ready to Move</p></a>
-                                </div>
-                                <div className="status1">
-                                    <a href=""><p>Under Construction</p></a>
+                            <hr />
+                            <div className="propertyAge">
+                                <p className="title">Property Age</p>
+                                <div className="ageChecks">
+                                    <div className="check1"><input type="checkbox" name="" id="" /><label>0-2 Years</label></div>
+                                    <div className="check1"><input type="checkbox" name="" id="" /><label>2-5 Years</label></div>
+                                    <div className="check1"><input type="checkbox" name="" id="" /><label>5-10 Years</label></div>
+                                    <div className="check1"><input type="checkbox" name="" id="" /><label>10+ Years</label></div>
                                 </div>
                             </div>
-                        </div>
 
-                        <hr />
-                        <div className="furnished">
-                            <button className="furnished-dropbtn" /*onclick={DropFn()}*/ >Furnished
-                                <span><FontAwesomeIcon icon={faCaretDown} /></span></button>
-                            {/* <div className="furnished-dropdown-content" id="fur-Dropdown">
+                            <hr />
+                            <div className="propertyStatus">
+                                <p className="title">Property Status</p>
+                                <div className="statusBox">
+                                    <div className="status1">
+                                        <a href=""><p>Ready to Move</p></a>
+                                    </div>
+                                    <div className="status1">
+                                        <a href=""><p>Under Construction</p></a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <hr />
+                            <div className="furnished">
+                                <button className="furnished-dropbtn" /*onclick={DropFn()}*/ >Furnished
+                                    <span><FontAwesomeIcon icon={faCaretDown} /></span></button>
+                                {/* <div className="furnished-dropdown-content" id="fur-Dropdown">
                                 <a href="#">Link 1</a>
                                 <a href="#">Link 2</a>
                                 <a href="#">Link 3</a>
                             </div> */}
-                        </div>
-                    </form>
-                </div>
-
-                {/*-----mobile filter header view-----*/}
-
-                <div className="mob-filter-header">
-                    <div className="filter-btn">
-                        <a href="" ><p>Filters</p></a>
-                    </div>
-                    <div class="mob-search-container">
-                        <form action="/action_page.php">
-                            <a href="#home_"><FontAwesomeIcon icon={faSearch} /></a>
-                            <input id="search" type="text" placeholder="Enter city, state, locality, pincode" name="search" />
+                            </div>
                         </form>
                     </div>
-
                 </div>
-                
-             <TempIndex />
+
+                <div className="tempParent">
+                    <TempIndex />
+                </div>
             </div>
         </>
     )

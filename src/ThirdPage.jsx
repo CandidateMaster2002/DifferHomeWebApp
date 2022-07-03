@@ -1,8 +1,12 @@
 import { faBed, faPieChart, faTag, faEnvelope, faPhone } from "@fortawesome/free-solid-svg-icons";
 import React from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {useLocation} from 'react-router-dom';
+
+
 
 const ThirdPage = () => {
+    const location = useLocation();
     return (
         <>
             <div className="Third-Navbar">
@@ -52,7 +56,7 @@ const ThirdPage = () => {
                     <a href="">View Map</a>
                 </div>
                 <div className="prop-details">
-                    <h2>Name of the Property</h2>
+                    <h2>{location.state.title}</h2>
                     <p>Address of the property from state to particular locality and pin code too.</p>
                     <div className="icons">
                         <div className="area" id="icon">

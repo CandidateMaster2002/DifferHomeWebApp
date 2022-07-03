@@ -21,7 +21,7 @@ const ConsltAbout = () => {
                    of our services. We provide a full analysis on the properties with
                    a futuristic perspective to help you determine the value of each one.
                    </p>
-                   <a href="#contactus" class="button_1">Reach US</a>
+                   <a href="#contactus" className="button_1">Reach US</a>
                    </div>
                    <div className="conslt-boy-img">
                     <img src='images/FreeConslt.png' alt="Consult-boy" />
@@ -37,7 +37,7 @@ const ConsltAbout = () => {
            </div>
            <div className="responsive_part">
            <h3>Get a Free Consultation</h3>
-           <div className="btn"><a href="#contactus" class="button_rsp">Reach US</a></div>           
+           <div className="btn"><a href="#contactus" className="button_rsp">Reach US</a></div>           
            </div>
         </div>
     </>

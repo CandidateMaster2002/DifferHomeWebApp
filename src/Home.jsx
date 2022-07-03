@@ -141,8 +141,8 @@ const Home = () => {
                         either it is locating the perfect dream home to building
                         a new one, we provide all the services just in here.
                     </p>
-                    <a href="under_maintainance" class="button_1">Get Started</a>
-                    <a href="#contactus" class="button_2">Contact Us</a>
+                    <a href="under_maintainance" className="button_1">Get Started</a>
+                    <a href="#contactus" className="button_2">Contact Us</a>
                 </div>
                 <div className="sofa-boy-img">
                     <img src='images/Sofa-boy.png' alt="Boy on Sofa" />
