@@ -16,7 +16,7 @@ const tempdata= [
     price: "65 lac"
 },
 {
-    id: "3",
+    id: "3", 
     imgsrc: "https://pix10.agoda.net/hotelImages/544190/-1/fe281e7414fe236eabfd6ec98a4016e9.jpg?ca=8&ce=1&s=1024x768",
     title: "Bunglow",
     address: "Manipur Colony, Manhattan, Dng...",
