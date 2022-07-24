@@ -4,6 +4,8 @@ import axios from "axios";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import context from "./Context";
+import Typography from "@material-ui/core/Typography";
+import Slider from "@material-ui/core/Slider";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faBed,
@@ -14,14 +16,15 @@ import {
 
 const SecondPgNavFiltr = () => {
   const [houses, setHouses] = useState([]);
+  const [fullHouses, setFullHouses] = useState([]);
   const [search, setSearch] = useState("");
+  const [budget, setBudget] = React.useState([1, 100000]);
+  const [area, setArea] = React.useState([1, 100000]);
   const [bhk, setBhk] = useState(-1);
-  const [propertyType, setPropertyType] = useState("All");
-  const [budget, setBudget] = useState(100);
-  const [area, setArea] = useState(100);
+  const [propertyType, setPropertyType] = useState("all");
   const [propertyAge, setPropertyAge] = useState(new Array(4).fill(1));
-  const [propertyStatus, setPropertyStatus] = useState("All");
-  const [areaType, setAreaType] = useState("All");
+  const [propertyStatus, setPropertyStatus] = useState("all");
+  const [areaType, setAreaType] = useState(new Array(3).fill(1));
   const [furnished, setFurnished] = useState(1);
 
   useEffect(() => {
@@ -30,6 +33,7 @@ const SecondPgNavFiltr = () => {
       .then((res) => {
         //      console.log((res.data[0]))
         setHouses(res.data);
+        setFullHouses(res.data);
         //console.log(houses);
       })
       .catch((err) => {
@@ -42,9 +46,26 @@ const SecondPgNavFiltr = () => {
   }, []);
 
   useEffect(() => {
-    console.log(houses);
+    //    console.log(houses);
 
-    let tempHouses = [...houses];
+    let tempHouses = [...fullHouses];
+
+    tempHouses = tempHouses.filter((house) => {
+      let aType = house.areaType;
+
+      if (areaType[0] === 1 && aType === "residential") {
+        return 1;
+      }
+
+      if (areaType[1] == 1 && aType === "commercial") {
+        return 1;
+      }
+
+      if (areaType[2] == 1 && aType === "resi-com") {
+        return 1;
+      }
+      return 0;
+    });
 
     if (search !== "") {
       tempHouses = tempHouses.filter((house) => {
@@ -58,12 +79,18 @@ const SecondPgNavFiltr = () => {
       });
     }
 
-    if (areaType != "All")
-      tempHouses = tempHouses.filter((house) => {
-        return house.areaType == areaType;
-      });
+    tempHouses = tempHouses.filter((house) => {
+      if (house.price >= budget[0] && house.price <= budget[1]) return 1;
 
-    if (propertyType != "All")
+      return 0;
+    });
+
+    tempHouses = tempHouses.filter((house) => {
+      if (house.area >= area[0] && house.price <= area[1]) return 1;
+      return 0;
+    });
+
+    if (propertyType !== "all")
       tempHouses = tempHouses.filter((house) => {
         return house.propertyType == propertyType;
       });
@@ -91,44 +118,53 @@ const SecondPgNavFiltr = () => {
       }
       return 0;
     });
-    if (propertyStatus != "All") {
-      console.log("gg");
-      tempHouses = tempHouses.filter((house) => {
-        console.log("ram");
-        console.log(house.status == propertyStatus + 6);
-        return house.status == propertyStatus;
-      });
-    }
 
+    // if (propertyStatus != "all") {
+    //   console.log(propertyStatus);
+    //   console.log("nn");
+    //   tempHouses = tempHouses.filter((house) => {
+    //     return house.status == propertyStatus;
+    //   });
+    // }
+    // tempHouses = tempHouses.filter((house) => {
+    //   if(propertyStatus[0]=='a') return 1;
+    //   if( propertyStatus[0]=='u' && house.status[0]=='u' ) return 1;
+    //   if( propertyStatus[0]=='r' && house.status[0]=='r' ) return 1;
+
+
+    //     return 0;
+    //   });
+   
     tempHouses = tempHouses.filter((house) => {
       return house.furnished == furnished;
     });
 
-    // const housesObj=Object.fromEntries(tempHouses)
-
     setHouses(tempHouses);
   }, [
     search,
-    bhk,
     areaType,
-    furnished,
-    propertyAge,
-    propertyStatus,
+    budget,
+    area,
     propertyType,
+    bhk,
+    propertyAge,
+     propertyStatus,
+    furnished,
   ]);
 
   const handlebhk = (b) => {
     setBhk(b);
-    console.log(bhk);
+    // console.log(bhk);
   };
 
   const handlePropertyType = (PType) => {
     setPropertyType(PType);
+    console.log(propertyType)
   };
 
   const handlePropertyAge = (ind) => {
     let temp = [...propertyAge];
-    temp[ind] = !temp[ind];
+    temp[ind] = 1 - temp[ind];
     setPropertyAge(temp);
   };
 
@@ -136,8 +172,19 @@ const SecondPgNavFiltr = () => {
     setPropertyType(ptype);
   };
 
-  const handleAreaType = (atype) => {
-    setAreaType(atype);
+  const handleAreaType = (ind) => {
+    let temp = [...areaType];
+    temp[ind] = 1 - temp[ind];
+    setAreaType(temp);
+    console.log(areaType);
+  };
+
+  const budgetRangeSelector = (event, newValue) => {
+    setBudget(newValue);
+  };
+
+  const areaRangeSelector = (event, newValue) => {
+    setArea(newValue);
   };
 
   return (
@@ -250,24 +297,40 @@ const SecondPgNavFiltr = () => {
               <form>
                 <div className="areaType">
                   <p className="title">Area Type</p>
-                  <div className="residental_dropdown">
-                    <button
-                      className="resdropbtn"
-                      onclick={() => handleAreaType("residential")}
-                    >
-                      Residental
-                      <span>
-                        <FontAwesomeIcon icon={faCaretDown} />
-                      </span>
-                    </button>
-
-                    {/* <div className="dropdown-content" id="resDropdown">
-                                <a href="#">Residental</a>
-                                <a href="#">Commertial</a>
-                                <a href="#">Resi-Comm</a>
-                            </div> */}
+                  <div className="aTypeChecks">
+                    <div className="check1">
+                      <input
+                        type="checkbox"
+                        name=""
+                        id=""
+                        checked={areaType[0]}
+                        onChange={() => handleAreaType(0)}
+                      />
+                      <label>Residential</label>
+                    </div>
+                    <div className="check1">
+                      <input
+                        type="checkbox"
+                        name=""
+                        id=""
+                        checked={areaType[1]}
+                        onChange={() => handleAreaType(1)}
+                      />
+                      <label>Commercial</label>
+                    </div>
+                    <div className="check1">
+                      <input
+                        type="checkbox"
+                        name=""
+                        id=""
+                        checked={areaType[2]}
+                        onChange={() => handleAreaType(2)}
+                      />
+                      <label>Resi-Com</label>
+                    </div>
                   </div>
                 </div>
+
                 <div className="propertyType">
                   <p className="title">Property Type</p>
                   <div className="propIcons">
@@ -284,16 +347,16 @@ const SecondPgNavFiltr = () => {
                     <div className="Icon">
                       <button
                         type="button"
-                        onClick={() => handlePropertyType("bungalow")}
+                        onClick={() => handlePropertyType("villa")}
                       >
                         <img src="images/bunglowIcon.png" alt=" " />
-                        <p className="iconName">Bung.</p>
+                        <p className="iconName">Villa</p>
                       </button>
                     </div>
                     <div className="Icon">
                       <button
                         type="button"
-                        onClick={() => handlePropertyType("villa")}
+                        onClick={() => handlePropertyType("plot")}
                       >
                         <img src="images/plotIcon.png" alt=" " />
                         <p className="iconName">Plot</p>
@@ -302,59 +365,31 @@ const SecondPgNavFiltr = () => {
                   </div>
                 </div>
 
-                <div className="Budget">
-                  <p className="title">Budget</p>
-                  <input className="range-set" type="range" name="" id="" />
-                  <div className="minMax">
-                    <div className="min">
-                      <label className="titleMin">Min</label>
-                      <input type="number" name="" id="" value="1" />
-                    </div>
-                    <div className="max">
-                      <label className="titleMax">Max</label>
-                      <input type="number" name="" id="" value="1000000" />
-                    </div>
-                  </div>
-                </div>
-                <hr />
-                <div className="Area">
-                  <p className="title">
-                    Area<span>sqft.</span>
-                  </p>
-                  <input className="range-set" type="range" name="" id="" />
-                  <div className="minMax">
-                    <div className="min">
-                      <label className="titleMin">Min</label>
-                      <input type="number" name="" id="" value="1" />
-                    </div>
-                    <div className="max">
-                      <label className="titleMax">Max</label>
-                      <input type="number" name="" id="" value="1000000" />
-                    </div>
-                  </div>
-                </div>
+                <Typography id="range-slider" gutterBottom>
+                  Select range of budget :
+                </Typography>
+
+                <Slider
+                  min={1}
+                  max={100000}
+                  value={budget}
+                  onChange={budgetRangeSelector}
+                  valueLabelDisplay="auto"
+                />
+
+                <Typography id="range-slider" gutterBottom>
+                  Select range of area (in sqft):
+                </Typography>
+
+                <Slider
+                  min={1}
+                  max={100000}
+                  value={area}
+                  onChange={areaRangeSelector}
+                  valueLabelDisplay="auto"
+                />
 
                 <hr />
-                {/* <div className="bhk">
-                <p className="title">BHKs</p>
-                <div className="bhkTypes">
-                  <label className="btype">
-                    <a href="">1</a>
-                  </label>
-                  <label className="btype">
-                    <a href="">2</a>
-                  </label>
-                  <label className="btype">
-                    <a href="">3</a>
-                  </label>
-                  <label className="btype">
-                    <a href="">4</a>
-                  </label>
-                  <label className="btype">
-                    <a href="">4+</a>
-                  </label>
-                </div>
-              </div> */}
 
                 <div className="bhk">
                   <p className="title">BHKs</p>
@@ -392,83 +427,90 @@ const SecondPgNavFiltr = () => {
                   <p className="title">Property Age</p>
                   <div className="ageChecks">
                     <div className="check1">
-                      <input type="checkbox" name="" id="" />
+                      <input
+                        type="checkbox"
+                        name=""
+                        id=""
+                        checked={propertyAge[0]}
+                        onChange={() => handlePropertyAge(0)}
+                      />
                       <label>0-2 Years</label>
                     </div>
                     <div className="check1">
-                      <input type="checkbox" name="" id="" />
+                      <input
+                        type="checkbox"
+                        name=""
+                        id=""
+                        checked={propertyAge[1]}
+                        onChange={() => handlePropertyAge(1)}
+                      />
                       <label>2-5 Years</label>
                     </div>
                     <div className="check1">
-                      <input type="checkbox" name="" id="" />
+                      <input
+                        type="checkbox"
+                        name=""
+                        id=""
+                        checked={propertyAge[2]}
+                        onChange={() => handlePropertyAge(2)}
+                      />
                       <label>5-10 Years</label>
                     </div>
                     <div className="check1">
-                      <input type="checkbox" name="" id="" />
+                      <input
+                        type="checkbox"
+                        name=""
+                        id=""
+                        checked={propertyAge[3]}
+                        onChange={() => handlePropertyAge(3)}
+                      />
                       <label>10+ Years</label>
                     </div>
                   </div>
                 </div>
 
                 <hr />
-                
-                {/* <div className="propertyStatus">
+
+                <div className="propertyStatus">
                   <p className="title">Property Status</p>
                   <div className="statusBox">
                     <div className="status1">
-                      <a href="">
-                        <p>Ready to Move</p>
-                      </a>
+                      <label className="btype">
+                        <button
+                          type="button"
+                          onClick={() => handlePropertyStatus("ready to move")}
+                        >
+                          Ready To Move
+                        </button>
+                      </label>
                     </div>
                     <div className="status1">
-                      <a href="">
-                        <p>Under Construction</p>
-                      </a>
+                      <label className="btype">
+                        <button
+                          type="button"
+                          onClick={() =>
+                            handlePropertyStatus("under construction")
+                          }
+                        >
+                          Under Construction
+                        </button>
+                      </label>
                     </div>
                   </div>
-                </div> */}
-
-<div className="propertyStatus">
-                    <p className="title">Property Status</p>
-                    <div className="statusBox">
-                      <div className="status1">
-                        <label className="btype">
-                          <button
-                            type="button"
-                            onClick={() => handlePropertyStatus("ready to move")}
-                          >
-                            Ready To Move
-                          </button>
-                        </label>
-                      </div>
-                      <div className="status1">
-                        <label className="btype">
-                          <button
-                            type="button"
-                            onClick={() =>
-                              handlePropertyStatus("under construction")
-                            }
-                          >
-                            Under Construction
-                          </button>
-                        </label>
-                      </div>
-                    </div>
-                  </div>
+                </div>
 
                 <hr />
                 <div className="furnished">
-                  <button className="furnished-dropbtn" /*onclick={DropFn()}*/>
-                    Furnished
-                    <span>
-                      <FontAwesomeIcon icon={faCaretDown} />
-                    </span>
-                  </button>
-                  {/* <div className="furnished-dropdown-content" id="fur-Dropdown">
-                                <a href="#">Link 1</a>
-                                <a href="#">Link 2</a>
-                                <a href="#">Link 3</a>
-                            </div> */}
+                  <div className="check1">
+                    <input
+                      type="checkbox"
+                      name=""
+                      id=""
+                      checked={furnished}
+                      onChange={() => setFurnished(!furnished)}
+                    />
+                    <label>Furnished</label>
+                  </div>
                 </div>
               </form>
             </div>

@@ -70,8 +70,8 @@ const LoginPage = () => {
                     </div>
 
                     <div className="LoginBottom">
-                        <button type="button" className="cancelbtn">Cancel</button>
-                        <span className="forgetPsw">Forgot <a href="#">password?</a></span>
+                        <button type="button" className="cancelbtn"><a href="http://localhost:3000/">Cancel</a></button>
+                        {/* <span className="forgetPsw">Forgot <a href="#">password?</a></span> */}
                     </div>
                 </form>
             </div>

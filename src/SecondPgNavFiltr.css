@@ -444,6 +444,7 @@ input[type="number"] {
 
 .bhk {
   margin: 0px 10px;
+
 }
 
 .bhk p {
@@ -456,7 +457,11 @@ input[type="number"] {
   display: flex;
   justify-content: center;
 }
+.btype{
+  border:none;
 
+
+}
 .bhkTypes label {
   border: 1px solid #bbbbbb;
   border-radius: 10px;
@@ -464,9 +469,11 @@ input[type="number"] {
   margin: 5px;
 }
 
+
 .bhkTypes label:hover {
   background-color: #bbbbbb;
 }
+
 
 .bhkTypes label a {
   text-decoration: none;
@@ -518,16 +525,17 @@ input[type="number"] {
 }
 
 .furnished {
-  margin: 5px 10px;
+  margin: 5px 10px 200px 10px;
 }
 
 .furnished-dropbtn {
   padding-left: none;
   top: 0%;
-  margin: 10px 0px 10px 10px;
+  margin: 10px 0px 250px 10px;
   width: 250px;
   border: none;
   border-radius: 5px;
+
 }
 
 .furnished-dropbtn span {
