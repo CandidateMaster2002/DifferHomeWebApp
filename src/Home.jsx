@@ -189,14 +189,14 @@ const Home = (props) => {
             <br />
           </div>
           <div className="startbtn">
-            <a href="under_maintainance" className="start_btn">
+            <a href="/profile-page" className="start_btn">
               Start
             </a>
           </div>
         </form>
       </div>
       <div className="reponsive_btn">
-        <a href="under_maintainance" className="rsp_btn">
+        <a href="/profile-page" className="rsp_btn">
           Get Started
         </a>
       </div>
@@ -212,7 +212,7 @@ const Home = (props) => {
             is locating the perfect dream home to building a new one, we provide
             all the services just in here.
           </p>
-          <a href="under_maintainance" className="button_1">
+          <a href="/profile-page" className="button_1">
             Get Started
           </a>
           <a href="#contactus" className="button_2">

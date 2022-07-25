@@ -7,12 +7,7 @@ import context from "./Context";
 import Typography from "@material-ui/core/Typography";
 import Slider from "@material-ui/core/Slider";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faBed,
-  faCaretDown,
-  faIndianRupee,
-  faSearch,
-} from "@fortawesome/free-solid-svg-icons";
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
 
 const SecondPgNavFiltr = () => {
   const [houses, setHouses] = useState([]);
@@ -57,11 +52,11 @@ const SecondPgNavFiltr = () => {
         return 1;
       }
 
-      if (areaType[1] == 1 && aType === "commercial") {
+      if (areaType[1] === 1 && aType === "commercial") {
         return 1;
       }
 
-      if (areaType[2] == 1 && aType === "resi-com") {
+      if (areaType[2] === 1 && aType === "resi-com") {
         return 1;
       }
       return 0;
@@ -95,25 +90,25 @@ const SecondPgNavFiltr = () => {
         return house.propertyType == propertyType;
       });
 
-    if (bhk != -1)
+    if (bhk !== -1)
       tempHouses = tempHouses.filter((house) => {
         console.log(house.bedrooms);
         console.log(bhk);
-        return house.bedrooms == bhk;
+        return house.bedrooms === bhk;
       });
 
     tempHouses = tempHouses.filter((house) => {
       let pAge = house.age;
-      if (propertyAge[0] == 1 && pAge >= 0 && pAge < 2) {
+      if (propertyAge[0] === 1 && pAge >= 0 && pAge < 2) {
         return 1;
       }
-      if (propertyAge[1] == 1 && pAge >= 2 && pAge < 5) {
+      if (propertyAge[1] === 1 && pAge >= 2 && pAge < 5) {
         return 1;
       }
-      if (propertyAge[2] == 1 && pAge >= 5 && pAge < 10) {
+      if (propertyAge[2] === 1 && pAge >= 5 && pAge < 10) {
         return 1;
       }
-      if (propertyAge[3] == 1 && pAge >= 10) {
+      if (propertyAge[3] === 1 && pAge >= 10) {
         return 1;
       }
       return 0;
@@ -134,9 +129,9 @@ const SecondPgNavFiltr = () => {
 
     //     return 0;
     //   });
-   
+
     tempHouses = tempHouses.filter((house) => {
-      return house.furnished == furnished;
+      return house.furnished === furnished;
     });
 
     setHouses(tempHouses);
@@ -148,7 +143,7 @@ const SecondPgNavFiltr = () => {
     propertyType,
     bhk,
     propertyAge,
-     propertyStatus,
+    propertyStatus,
     furnished,
   ]);
 
@@ -365,29 +360,34 @@ const SecondPgNavFiltr = () => {
                   </div>
                 </div>
 
-                <Typography id="range-slider" gutterBottom>
-                  Select range of budget :
-                </Typography>
+                <div className="Budget">
+                  <Typography id="range-slider" gutterBottom>
+                    <p>Select range of budget :</p>
+                  </Typography>
 
-                <Slider
-                  min={1}
-                  max={100000}
-                  value={budget}
-                  onChange={budgetRangeSelector}
-                  valueLabelDisplay="auto"
-                />
+                  <Slider
+                    min={1}
+                    max={100000}
+                    value={budget}
+                    onChange={budgetRangeSelector}
+                    valueLabelDisplay="auto"
+                  />
+                </div>
+                <hr />
 
-                <Typography id="range-slider" gutterBottom>
-                  Select range of area (in sqft):
-                </Typography>
+                <div className="Area">
+                  <Typography id="range-slider" gutterBottom>
+                    Select range of area (in sqft):
+                  </Typography>
 
-                <Slider
-                  min={1}
-                  max={100000}
-                  value={area}
-                  onChange={areaRangeSelector}
-                  valueLabelDisplay="auto"
-                />
+                  <Slider
+                    min={1}
+                    max={100000}
+                    value={area}
+                    onChange={areaRangeSelector}
+                    valueLabelDisplay="auto"
+                  />
+                </div>
 
                 <hr />
 
