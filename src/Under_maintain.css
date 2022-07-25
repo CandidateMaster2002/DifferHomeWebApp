@@ -1,0 +1,17 @@
+.under_maintainance_img{
+    position: absolute;
+    margin-top: 10%;
+    margin-left: 30%;
+    width: 40%;
+    margin-bottom: 20%;
+    align-items: center;
+    animation: up-down 2s ease-in-out infinite alternate-reverse both;
+}
+@keyframes up-down {
+    0% {
+        transform: translateY(10px);
+    }
+    100%{
+        transform: translateY(-10px);
+    }
+}
