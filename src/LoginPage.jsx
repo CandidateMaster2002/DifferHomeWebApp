@@ -1,15 +1,27 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import Alert from '@mui/material/Alert';
 import { useNavigate } from 'react-router-dom';
+import AdminPortal from './AdminPortal';
 
 const LoginPage = props => {
     const [user, setUser] = useState({})
+    const [loggedInUser, setLoggedInUser] = useState()
+
     const [flag,setFlag]=useState(0)
     const [showPassword,setShowPassword]=useState(0)
     const [rememberMe,setRememberMe]=useState(0)
 
 
     const navigate = useNavigate();
+
+    useEffect(() => {
+        setLoggedInUser(localStorage.getItem("user"));
+        if (loggedInUser) {
+            console.log(loggedInUser)
+            navigate("/admin");
+        }
+      }, []);
+
     const handleChange = (event) =>{
         console.log(event);
                 const name =  event.target.name;
@@ -17,8 +29,8 @@ const LoginPage = props => {
                 setUser(values => ({...values,
                     [name]: value})
                 )
-
     }
+
     const loginAdmin = (event) => {
         event.preventDefault();
          console.log (event)    ;
@@ -41,7 +53,9 @@ const LoginPage = props => {
                 if(data.success){
                 //    window.localStorage('loginData',data)
                     setFlag(0)
+                    localStorage.setItem('user', data)
                     navigate("/admin");
+
                     // props.navigate.push("/admin");
                 }
                 else{
@@ -54,13 +68,17 @@ const LoginPage = props => {
               console.log(err);
             });
     }
+    // if(user) {
+    //     console.log(user)
+    //     return <AdminPortal></AdminPortal>
+    // }
     return (
         <>
             <div className='LoginPage'>
                 {/* <img src='images/login_bg.jpg' /> */}
                 <h1>Login Page</h1>
 
-                <form action="/" onSubmit={loginAdmin}>
+                <form  onSubmit={loginAdmin}>
                     <div className="AvtarImg">
                         <img src="images/avatarImg.png" alt="Avatar" className="avatar" />
                     </div>
@@ -76,7 +94,6 @@ const LoginPage = props => {
                         <button type="submit" >Login</button>
                         <label>
                             <input type="checkbox" checked={rememberMe} onChange={() => setRememberMe(!rememberMe)}name="rememberMe" /> Remember me
-
                         </label>
                         <label>
                             <input type="checkbox" checked={showPassword} onChange={() => setShowPassword(!showPassword)}name="remember" /> Show Password

@@ -1,9 +1,19 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { useNavigate } from 'react-router-dom';
+
 
 const AdminPortal = () => {
   const url = "http://localhost:5000/api/addProject/";
+  const navigate = useNavigate();
+
+  useEffect(() => {
+
+  if(!localStorage.length)
+  navigate("/login")    
+  }, []);
+  
 
   // const [photos, setPhotos] = useState(null);
 
@@ -36,6 +46,13 @@ const AdminPortal = () => {
   
   const handleClear = () => {
     setData(emptyData)
+  };
+
+  const handleLogOut = () => {
+    console.log(localStorage)
+    localStorage.clear();
+    navigate('/login')
+    
   };
 
 
@@ -74,6 +91,8 @@ const AdminPortal = () => {
     fd.append('floorPlan',data.floorPlan);
     fd.append('brochure',data.brochure);
 
+    
+
     const response= axios.post(url,fd,{
       // method:'POST',
        headers:{
@@ -97,6 +116,8 @@ const AdminPortal = () => {
   
  
   return (
+
+   
     <>
       <div className="AdminHeader">
         <div>
@@ -114,6 +135,11 @@ const AdminPortal = () => {
             Clear all inputs
           </button>
         </div>
+        <button
+            type="button" onClick={() => handleLogOut()}
+          >
+            Logout
+          </button>
       </div>
       <div className="adminFormDetails">
         <div className="adminForm">

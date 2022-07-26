@@ -6,7 +6,7 @@
   height: 60px;
   line-height: 60px;
   width: 100vw;
-  z-index: 1;
+  z-index: 2;
   justify-content: baseline;
   display: flex;
 }
@@ -330,27 +330,8 @@
   width: 100%;
 }
 
-.residental_dropdown {
-  width: 100%;
-  margin-right: 0px;
-  display: block;
-}
-
-.resdropbtn {
-  padding-left: none;
-  top: 0%;
-  margin: 10px 0px 10px 27px;
-  width: 240px;
-  border: none;
-  border-radius: 5px;
-}
-
-.resdropbtn span {
-  margin-left: 20px;
-}
-
-.residental_dropdown button {
-  padding: 5px 50px 5px 50px;
+.aTypeChecks{
+  margin: 10px 0px 15px 10px;
 }
 
 .propertyType {
@@ -365,64 +346,46 @@
 
 .propIcons {
   display: flex;
-  margin: 8px;
+  margin: 8px 0px 10px 10px;
   justify-content: center;
 }
 
 .Icon {
   align-items: center;
   padding: 8px;
+  margin-left: 0px;
 }
 
-.Icon img {
+.Icon button {
+border: 0.2px solid #dadada;
+border-radius: 10px;
+background-color: #ffff;
+width: 70px;
+}
+
+.Icon :hover{
+  background-color: #e8e7e7;
+}
+
+.Icon img{
+  padding: 5px;
   width: 25px;
   align-items: center;
 }
-
-.Icon a {
-  display: flex;
-  flex-direction: column;
-  font-size: 12px;
-  text-decoration: none;
-  color: black;
-  align-items: center;
+.Icon p{
+  margin: 5px;
+  text-align: center;
+  margin: 0px;
 }
 
 .Budget {
-  flex-grow: 1.5;
-  align-items: left;
-  width: auto;
-  margin: 10px;
+  width: 92%;
+  margin: 10px 0 0 10px;
+  padding: 10px;
 }
-
-.Budget p {
+.Budget p{
+  text-align: left;
   font-weight: 600;
-  margin-left: 15px;
-}
-
-input[type="range"] {
-  width: 100%;
-}
-
-input[type="range"]::-webkit-slider-thumb {
-  height: 5px;
-}
-
-.minMax {
-  display: flex;
-  justify-content: space-between;
-}
-
-.min,
-.max {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-input[type="number"] {
-  width: 40px;
-  height: 20px;
 }
 
 .Area {
