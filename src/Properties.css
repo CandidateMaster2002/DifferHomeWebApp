@@ -1,0 +1,118 @@
+.Properties{
+    margin-top: 210vh;
+    position: absolute;
+    width: 90%;
+    left: 5%;
+    text-align: center;
+    scroll-behavior: smooth;
+}
+.Properties_cards{
+    margin: 50px 10px;
+    display: flex;
+    justify-content: space-between;
+}
+.Properties_cards :hover{
+    box-shadow: 0 1px 10px rgb(133, 133, 133);
+    border-radius: 20px;
+}
+.Properties_img{
+    background-color: #114765;
+    border-radius: 20px;
+}
+.Properties_img img{
+    border-radius: 20px;
+    width: 320px;
+    height: 220px;
+}
+.Properties_img :hover{
+    border: none;
+    box-shadow: none;
+}
+.Properties_img p{
+    color: #fff;
+    font-size: 18px;
+    margin: 10px 0px 0px 0px;
+    padding-bottom: 5px;
+}
+/* .Properties_img :hover .hidden_text{
+    color: #fff;
+    font-size: 15px;
+    z-index: 1;
+    display: block;   
+} */
+
+@media (max-width:600px){
+    .Properties{
+        top: 145vh;
+        position: absolute;
+        width: 100%;
+        left: 0%;
+        margin: 10px;
+        margin-left: 0;
+        text-align: center;
+        z-index: 5;
+    } 
+    .Properties h2{
+        font-size: 20px;
+    }
+    .Properties_cards{
+        margin: 15px;
+        display: inline-flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    .Properties_img img{
+        border-radius: 20px;
+        width: 270px;
+        height: 180px;
+    }
+    .Properties_cards :hover{
+        border: none;
+        box-shadow: none;
+        border-radius: none;
+    }
+    .Properties_img p{
+        color: #fff;
+        font-size: 15px;
+        margin: 10px 0px 12px 0px;
+        padding-bottom: 5px;
+    }
+}
+@media (min-width:601px) and (max-width:1000px){
+    .Properties{
+        margin-top: 175vh;
+        left: 3%;
+    }
+    .Properties_cards{
+        margin: 20px 40px;
+        flex-wrap: wrap;
+        left: 5%;
+        justify-content: center;
+    }
+    .Properties_cards :hover{
+        box-shadow: none;
+        border-radius: 20px;
+    }
+    .Properties_img{
+        background-color: #114765;
+        border-radius: 20px;
+        margin: 15px;
+    }
+    .Properties_img img{
+        border-radius: 20px;
+        width: 290px;
+        height: 190px;
+
+    }
+    .Properties_img :hover{
+        border: none;
+        box-shadow: none;
+    }
+    .Properties_img p{
+        color: #fff;
+        font-size: 18px;
+        margin: 5px 0px 0 0;
+        padding-bottom: none;
+    }
+}

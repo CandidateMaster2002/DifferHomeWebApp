@@ -1,0 +1,72 @@
+.LoginPage{
+    position: absolute;
+    background-image: linear-gradient(rgba(17, 71, 101, 0.6), rgba(17, 71, 101, 0.6)),
+    url("../public/images/login_bg.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+}
+.LoginPage h1{
+    margin-top: 110px;
+    text-align: center;
+    color: #fff;
+}
+.LoginPage form {
+    height: 450px;
+    width: 450px;
+    background-color: rgba(254, 254, 254, 0.5);
+    z-index: 1;
+    border-radius: 5%;
+    top: 25%;
+    left: 36%;
+    position: absolute;
+    padding: 25px;
+}
+.AvtarImg img {
+    width: 100px;
+    align-items: center;
+    margin: 0px 10px 10px 150px;
+}
+.LoginBox input[type=text], input[type=password] {
+    width: 100%;
+    padding: 5px 15px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    border-radius: 5px;
+  }
+.LoginBox button {
+    background-color: #114567;
+    color: white;
+    padding: 5px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: auto;
+    border-radius: 5px;
+}
+.LoginBox button:hover{
+    background-color: #022c48;
+}
+.LoginBox input[type=checkbox]{
+  margin-left: 200px;
+}
+.cancelbtn {
+    margin: 15px 0px;
+    width: auto;
+    padding: 5px 16px;
+    background-color: #ff1100;
+    border-radius: 5px;
+    border: none;
+    color: #fff;
+}
+.cancelbtn:hover{
+    background-color: #890900;
+}
+.LoginBottom span.forgetPsw {
+    padding-top: 16px;
+    float: right;
+}
