@@ -48,21 +48,21 @@ const SecondPgNavFiltr = () => {
     tempHouses = tempHouses.filter((house) => {
       let aType = house.areaType;
 
-      if (areaType[0] === 1 && aType === "residential") {
+      if (areaType[0] == 1 && aType == "residential") {
         return 1;
       }
 
-      if (areaType[1] === 1 && aType === "commercial") {
+      if (areaType[1] == 1 && aType == "commercial") {
         return 1;
       }
 
-      if (areaType[2] === 1 && aType === "resi-com") {
+      if (areaType[2] == 1 && aType == "resi-com") {
         return 1;
       }
       return 0;
     });
 
-    if (search !== "") {
+    if (search != "") {
       tempHouses = tempHouses.filter((house) => {
         let flag = 0;
         let state = house.state.toLowerCase();
@@ -85,27 +85,30 @@ const SecondPgNavFiltr = () => {
       return 0;
     });
 
-    
+    if (propertyType != "all")
+      tempHouses = tempHouses.filter((house) => {
+        return house.propertyType == propertyType;
+      });
 
-    if (bhk !== -1)
+    if (bhk != -1)
       tempHouses = tempHouses.filter((house) => {
         console.log(house.bedrooms);
         console.log(bhk);
-        return house.bedrooms === bhk;
+        return house.bedrooms == bhk;
       });
 
     tempHouses = tempHouses.filter((house) => {
       let pAge = house.age;
-      if (propertyAge[0] === 1 && pAge >= 0 && pAge < 2) {
+      if (propertyAge[0] == 1 && pAge >= 0 && pAge < 2) {
         return 1;
       }
-      if (propertyAge[1] === 1 && pAge >= 2 && pAge < 5) {
+      if (propertyAge[1] == 1 && pAge >= 2 && pAge < 5) {
         return 1;
       }
-      if (propertyAge[2] === 1 && pAge >= 5 && pAge < 10) {
+      if (propertyAge[2] == 1 && pAge >= 5 && pAge < 10) {
         return 1;
       }
-      if (propertyAge[3] === 1 && pAge >= 10) {
+      if (propertyAge[3] == 1 && pAge >= 10) {
         return 1;
       }
       return 0;
@@ -128,7 +131,7 @@ const SecondPgNavFiltr = () => {
     //   });
 
     tempHouses = tempHouses.filter((house) => {
-      return house.furnished === furnished;
+      return house.furnished == furnished;
     });
 
     if (propertyType != "all")
@@ -385,13 +388,15 @@ const SecondPgNavFiltr = () => {
                     Select range of area (in sqft):
                   </Typography>
 
-                  <Slider
-                    min={1}
-                    max={100000}
-                    value={area}
-                    onChange={areaRangeSelector}
-                    valueLabelDisplay="auto"
-                  />
+                  <div className="slider-parent">
+                    <Slider
+                      min={1}
+                      max={100000}
+                      value={area}
+                      onChange={areaRangeSelector}
+                      valueLabelDisplay="auto"
+                    />
+                  </div>
                 </div>
 
                 <hr />
@@ -480,7 +485,7 @@ const SecondPgNavFiltr = () => {
                   <p className="title">Property Status</p>
                   <div className="statusBox">
                     <div className="status1">
-                      <label className="btype">
+                      <label className="btnType">
                         <button
                           type="button"
                           onClick={() => handlePropertyStatus("ready to move")}
@@ -490,7 +495,7 @@ const SecondPgNavFiltr = () => {
                       </label>
                     </div>
                     <div className="status1">
-                      <label className="btype">
+                      <label className="btnType">
                         <button
                           type="button"
                           onClick={() =>
