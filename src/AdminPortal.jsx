@@ -5,96 +5,99 @@ import axios from "axios";
 const AdminPortal = () => {
   const url = "http://localhost:5000/api/addProject/";
 
+  // const [photos, setPhotos] = useState(null);
+
   const [data, setData] = useState({
-    propertyName: "a",
-    propertyType: "a",
-    areaType: "a",
-    city: "bb",
-    state: "a",
-    pincode: 1,
-    address: "a",
-    area: 1,
-    carpetArea: 1,
-    price: 1,
-    priceSqft: 1,
-    bedroom: 1,
-    bathroom: 1,
-    reraRegistered: "a",
-    propertyAge: 1,
-    status: "true",
-    furnished: "true",
-    about: "a",
-    photos: "bb",
-    layout3d: "bb",
-    floorPlan: "bb",
-    brochure: "bb",
+    propertyName: "",
+    propertyType: "",
+    areaType: "",
+    city: "",
+    state: "",
+    pincode: '',
+    address: "",
+    area: '',
+    carpetArea: '',
+    price:'',
+    priceSqft: '',
+    bedroom: '',
+    bathroom: '',
+    reraRegistered: '',
+    propertyAge: '',
+    status: '',
+    furnished: '',
+    about: '',
+    photos: null,
+    layout: null,
+    floorPlan: null,
+    brochure: null,
   });
 
+    const [emptyData,setEmptyData]=useState(data)
+  
+  const handleClear = () => {
+    setData(emptyData)
+  };
+
+
   function handle(e) {
-    const newData = { ...data };
-    newData[e.target.id] = e.target.value;
-    setData(newData);
-    // console.log(newData)
+    setData({...data,[e.target.name]: e.target.value});
   }
 
-  // function handleSubmit(e) {
-  //   console.log("ll");
-  //   e.preventDefault();
-  //   axios
-  //     .post(url, {
-
-      
-  //       propertyName: data.propertyName,
-  //       propertyType: data.propertyType,
-  //       areaType: data.areaType,
-  //       city: data.city,
-  //       state: data.state,
-  //       pincode: data.pincode,
-  //       address: data.address,
-  //       area: data.area,
-  //       carpetArea: data.carpetArea,
-  //       price: data.price,
-  //       priceSqft: data.priceSqft,
-  //       bedrooms: data.bedroom,
-  //       bathrooms: data.bathroom,
-  //       reraRegistered: data.reraRegistered,
-  //       age: data.propertyAge,
-  //       status: data.status,
-  //       furnished: data.furnished,
-  //       about: data.about,
-  //       photos: data.photos,
-  //       layout: data.layout3d,
-  //       floorPlan: data.floorPlan,
-  //       brochure: data.brochure,
-  //     })
-  //     .then((res) => {
-  //       console.log(res.data);
-  //     });
-  // }
+  function handleImages(e) {
+//    console.log(e.target.files);
+    setData({...data,[e.target.name]: e.target.files[0]});
+  }
 
   let handleSubmit = async (e) => {
-      e.preventDefault();
-      try {
-        let res = await fetch(url,{
-          method: "POST",
-          body: JSON.stringify({
-              about:data.about
-          }),
-        });
-        let resJson = await res.json();
-        if (res.status === 200) {
-         console.log("200")
-          console.log(res)
-        } else {
-          console.log("Some error occured")
-        }
-      } catch (err) {
-        console.log(err);
-      }
-    };
+    e.preventDefault();
+    var fd= new FormData();
+    fd.append('propertyName' ,data.propertyName);
+    fd.append('propertyType' ,data.propertyType);
+    fd.append('areaType' ,data.areaType);
+    fd.append('city' ,data.city);
+    fd.append('state' ,data.state);
+    fd.append('pincode' ,data.pincode);
+    fd.append('address' ,data.address);
+    fd.append('area' ,data.area);
+    fd.append('carpetArea' ,data.carpetArea);
+    fd.append('price' ,data.price);
+    fd.append('priceSqft' ,data.priceSqft);
+    fd.append('bedroom' ,data.bedroom);
+    fd.append('bathroom' ,data.bathroom);
+    fd.append('reraRegistered',data.reraRegistered)
+    fd.append('age',data.propertyAge)
+    fd.append('status',data.status)
+    fd.append('about',data.about)
+    //console.log(data.photos);
+    fd.append('photos',data.photos);
+    fd.append('layout',data.layout);
+    fd.append('floorPlan',data.floorPlan);
+    fd.append('brochure',data.brochure);
+
+    const response= axios.post(url,fd,{
+      // method:'POST',
+       headers:{
+           "Content-Type": "multipart/form-data",
+           //'auth-token':localStorage.getItem('token')
+       }
+   }).then((res,err)=>{
+       
+   const json=  res.data;
+
+  console.log(json);
+  
+  
+   }).catch((error)=>{
+   
+       console.log(error);
+   })
+
+
+};
+  
+ 
   return (
     <>
-      {/* <form onSubmit={handleSubmit}> */}
       <div className="AdminHeader">
         <div>
           <h1>Admin Portal</h1>
@@ -102,15 +105,19 @@ const AdminPortal = () => {
         <div className="addBtn">
           <button
             type="button"
-            //  onChange={(e) => submit(e)}
           >
-            Add Property
+            Remove Property
+          </button>
+          <button
+            type="button" onClick={() => handleClear()}
+          >
+            Clear all inputs
           </button>
         </div>
       </div>
       <div className="adminFormDetails">
         <div className="adminForm">
-          <form onSubmit={(e) => handleSubmit(e)}>
+          <form encType="multipart/form-data" onSubmit={(e) => handleSubmit(e)}>
             <div className="propName">
               <label for="propname">
                 <b>Property Name</b>
@@ -120,7 +127,7 @@ const AdminPortal = () => {
                 type="text"
                 id="propertyName"
                 value={data.propertyName}
-                name="propname"
+                name="propertyName"
               />
             </div>
             <div>
@@ -131,7 +138,7 @@ const AdminPortal = () => {
                 onChange={(e) => handle(e)}
                 id="propertyType"
                 value={data.propertyType}
-                name="proptype"
+                name="propertyType"
               >
                 <option value="villa">Villa</option>
                 <option value="plot">Plot</option>
@@ -143,9 +150,9 @@ const AdminPortal = () => {
               </label>
               <select
                 onChange={(e) => handle(e)}
-                id="areatype"
+                id="areaType"
                 value={data.areaType}
-                name="areatype"
+                name="areaType"
               >
                 <option value="residential">Residental</option>
                 <option value="commercial">Commertial</option>
@@ -222,7 +229,7 @@ const AdminPortal = () => {
                   type="number"
                   id="carpetArea"
                   value={data.carpetArea}
-                  name="car-area"
+                  name="carpetArea"
                 />
                 <b>Sqft.</b>
               </div>
@@ -237,7 +244,7 @@ const AdminPortal = () => {
                   type="number"
                   id="price"
                   value={data.price}
-                  name="price1"
+                  name="price"
                 />
                 <b>Rs.</b>
               </div>
@@ -250,7 +257,7 @@ const AdminPortal = () => {
                   type="number"
                   id="priceSqft"
                   value={data.priceSqft}
-                  name="price2"
+                  name="priceSqft"
                 />
                 <b>Rs.</b>
               </div>
@@ -294,7 +301,7 @@ const AdminPortal = () => {
                   onChange={(e) => handle(e)}
                   id="reraRegistered"
                   value={data.reraRegistered}
-                  name="proptype"
+                  name="reraRegistered"
                 >
                   <option value="true">Yes</option>
                   <option value="false">No</option>
@@ -351,6 +358,7 @@ const AdminPortal = () => {
                 onChange={(e) => handle(e)}
                 type="text"
                 id="about"
+                name="about"
                 value={data.about}
               />
             </div>
@@ -359,25 +367,25 @@ const AdminPortal = () => {
                 <label for="photos">
                   <b>Photos:</b>
                 </label>
-                <a href="">Upload</a>
+                <input type="file" name="photos" id="photos" onChange={handleImages}/>
               </div>
               <div>
                 <label for="layout">
                   <b>3D Layout:</b>
                 </label>
-                <a href="">Upload</a>
+                <input type="file" name="layout" id="layout" onChange={handleImages}/>
               </div>
               <div>
                 <label for="floor">
                   <b>Floor Plan:</b>
                 </label>
-                <a href="">Upload</a>
+                <input type="file" name="floorPlan" id="floorPlan" onChange={handleImages}/>
               </div>
               <div>
                 <label for="brochure">
                   <b>Brochure:</b>
                 </label>
-                <a href="">Upload</a>
+                <input type="file" name="brochure" id="brochure" onChange={handleImages}/>
               </div>
             </div>
             <div className="SubmitBtn">
@@ -392,7 +400,6 @@ const AdminPortal = () => {
           <div className="mapBox"></div>
         </div>
       </div>
-      {/* </form> */}
     </>
   );
 };

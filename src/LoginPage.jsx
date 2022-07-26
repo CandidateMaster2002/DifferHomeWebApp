@@ -1,8 +1,15 @@
 import React, { useState } from 'react';
+import Alert from '@mui/material/Alert';
+import { useNavigate } from 'react-router-dom';
 
-
-const LoginPage = () => {
+const LoginPage = props => {
     const [user, setUser] = useState({})
+    const [flag,setFlag]=useState(0)
+    const [showPassword,setShowPassword]=useState(0)
+    const [rememberMe,setRememberMe]=useState(0)
+
+
+    const navigate = useNavigate();
     const handleChange = (event) =>{
         console.log(event);
                 const name =  event.target.name;
@@ -23,7 +30,7 @@ const LoginPage = () => {
         //  headers.append('Authorization', 'Basic ' + base64.encode(emai + ":" +  password));
          headers.append('Origin','http://localhost:3000');
      
-        fetch('http://localhost:5000/login', {            
+        fetch('http://localhost:5000/auth/login', {            
             method: "POST",
             headers: headers,
             body: JSON.stringify(user)
@@ -31,15 +38,17 @@ const LoginPage = () => {
             .then((response) => response.json())
             .then((data) => {
                 console.log(data);
-                if(data.message === "logged in successfully"){
-                    alert("logged in successfully");
+                if(data.success){
+                //    window.localStorage('loginData',data)
+                    setFlag(0)
+                    navigate("/admin");
+                    // props.navigate.push("/admin");
                 }
                 else{
-                    alert("incorrect inputs");
+                  //  alert("incorrect inputs");
+                    setFlag(1)
                 }
-                
-             
-              
+                              
             })
             .catch((err) => {
               console.log(err);
@@ -55,17 +64,22 @@ const LoginPage = () => {
                     <div className="AvtarImg">
                         <img src="images/avatarImg.png" alt="Avatar" className="avatar" />
                     </div>
-
+                   { flag?<Alert severity="error">Wrong User Name or Password — Enter Again !</Alert>:""}
+                       {/* <div className='Alert'> {flag&&}</div> */}
                     <div className="LoginBox">
                         <label for="uname"><b>User Name</b></label>
                         <input name = "email" value={user.email || ""} onChange ={handleChange} type="text" placeholder="Enter Username" required />
 
                         <label for="psw"><b>Password</b></label>
-                        <input name= "password" type="password" placeholder="Enter Password" value={user.password || ""} onChange ={handleChange}  required />
+                        <input name= "password" type={showPassword?"text":"password"} placeholder="Enter Password" value={user.password} onChange ={handleChange}  required />
 
                         <button type="submit" >Login</button>
                         <label>
-                            <input type="checkbox" checked="check" name="remember" /> Remember me
+                            <input type="checkbox" checked={rememberMe} onChange={() => setRememberMe(!rememberMe)}name="rememberMe" /> Remember me
+
+                        </label>
+                        <label>
+                            <input type="checkbox" checked={showPassword} onChange={() => setShowPassword(!showPassword)}name="remember" /> Show Password
                         </label>
                     </div>
 
