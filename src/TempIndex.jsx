@@ -20,7 +20,7 @@ const TempIndex = () => {
                 return (
                     <Template
                         key={house._id}
-                        imgsrc={house.photos}
+                        imgsrc={house.photos[0]}
                         title={house.propertyName}
                         address={house.city}
                         bhk={house.bedrooms}

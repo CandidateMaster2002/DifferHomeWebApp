@@ -15,7 +15,7 @@ navigate('/Third-page',{state:{title:_props.title}});
             <div id="right-temp">
                 <div className="templates">
                     <div className="tempBox">
-                        <a onClick={()=>{toComponentB()}} ><img src={_props.imgsrc} alt="Property Image"/>
+                        <a onClick={()=>{toComponentB()}} ><img src={"http://localhost:5000" + _props.imgsrc} alt="Property Image"/>
                         </a>
                         <div className="contentBox">
                             <p className="temp-title">{_props.title}<br />

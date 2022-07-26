@@ -357,7 +357,7 @@
 }
 
 .Icon button {
-border: 0.2px solid #dadada;
+border: 0.2px solid #bbbbbb;
 border-radius: 10px;
 background-color: #ffff;
 width: 70px;
@@ -404,10 +404,13 @@ width: 70px;
   border-radius: 5px;
   margin-left: 10px;
 }
+.slider-parent{
+  margin-top: 50px;
+}
 
 .bhk {
   margin: 0px 10px;
-
+  width: 90%;
 }
 
 .bhk p {
@@ -419,28 +422,18 @@ width: 70px;
 .bhkTypes {
   display: flex;
   justify-content: center;
+  margin-left: 0px;
 }
-.btype{
-  border:none;
 
-
-}
-.bhkTypes label {
+.bhkTypes button {
   border: 1px solid #bbbbbb;
+  background-color: #ffff;
   border-radius: 10px;
   padding: 2px 10px;
   margin: 5px;
 }
-
-
-.bhkTypes label:hover {
-  background-color: #bbbbbb;
-}
-
-
-.bhkTypes label a {
-  text-decoration: none;
-  color: rgb(53, 53, 53);
+.bhkTypes button:hover {
+  background-color: #e8e7e7;
 }
 
 .propertyAge {
@@ -475,20 +468,21 @@ width: 70px;
   text-align: center;
 }
 
-.status1 a {
-  text-decoration: none;
-  color: black;
+.status1 button{
+  border: 1px solid #bbbbbb;
+  background-color: #ffff;
+  border-radius: 10px;
+  padding: 4px 7px;
+  margin: 5px;
+  font-size: 14px;
 }
 
-.status1 p {
-  font-weight: 400;
-  border: 1px solid #bbbbbb;
-  border-radius: 5px;
-  padding: 5px;
+.status1 button:hover {
+  background-color: #e8e7e7;
 }
 
 .furnished {
-  margin: 5px 10px 200px 10px;
+  margin: 5px 10px 150px 10px;
 }
 
 .furnished-dropbtn {
