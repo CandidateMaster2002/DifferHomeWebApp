@@ -10,15 +10,15 @@ import SecondPgNavFiltr from './SecondPgNavFiltr';
 import ThirdPage from './ThirdPage';
 import LoginPage from './LoginPage';
 import AdminPortal from './AdminPortal';
-
 import './Under_maintain.css';
 import './App.css';
 import './SecondPgNavFiltr.css';
 import './ThirdPage.css';
 import './LoginPage.css';
 import './AdminPortal.css';
-
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { Provider } from "react-redux";
+import store from "./redux/store";
 
 /*ReactDOM.render(
   <BrowserRouter>
@@ -29,7 +29,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
   const root = ReactDOM.createRoot(document.getElementById('root'));
   root.render(
-    <BrowserRouter>
+
+    <Provider store={store}>
+       <BrowserRouter>
     <Routes>
                <Route path="/under_maintainance" element={<Under_maintain />} />
                <Route exact path="/" element={<App />} />
@@ -43,6 +45,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
                {/* <Redirect to="/" element={<Home />}  /> */}
            </Routes>
    </BrowserRouter>
+    </Provider>
   );
 
   reportWebVitals();

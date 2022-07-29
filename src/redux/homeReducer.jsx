@@ -1,9 +1,10 @@
  import * as actionTypes from '../redux/actions'
 
 let arr = new Array(3).fill(1);
-let arr0=new Array(3).fill(0);
 const initialState = {
   propertyTypeArr: arr,
+  state:"all",
+  city:"all"
 };
 const homeReducer = (state = initialState, action) => {
   console.log(action);
@@ -12,13 +13,21 @@ const homeReducer = (state = initialState, action) => {
     // {console.log("aa")}
 
     case actionTypes.HANDLE_PROPERTY_TYPE:
-    //   let tempArr = [...state.propertyTypeArr];
-    //   tempArr[0] = 1 - tempArr[0];
-      console.log("bb");
+
       return {
         ...state,
-        propertyTypeArr: [...arr0],
+        propertyTypeArr: [...arr],
       }
+
+    case actionTypes.HANDLE_STATE:
+      return{
+        ...state,state:action.payload
+      }
+
+      case actionTypes.HANDLE_CITY:
+        return{
+          ...state,city:action.payload
+        }
 
     default:
       return state;

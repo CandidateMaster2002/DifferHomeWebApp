@@ -8,8 +8,12 @@ import Typography from "@material-ui/core/Typography";
 import Slider from "@material-ui/core/Slider";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
+import {connect} from 'react-redux'
+import * as actionTypes from './redux/actions'
 
-const SecondPgNavFiltr = () => {
+
+const SecondPgNavFiltr = (props) => {
+
   const [houses, setHouses] = useState([]);
   const [fullHouses, setFullHouses] = useState([]);
   const [search, setSearch] = useState("");
@@ -20,11 +24,17 @@ const SecondPgNavFiltr = () => {
   const [propertyAge, setPropertyAge] = useState(new Array(4).fill(1));
   const [propertyStatus, setPropertyStatus] = useState("all");
   const [areaType, setAreaType] = useState(new Array(3).fill(1));
-  const [furnished, setFurnished] = useState(1);
+  const [furnishedArr, handleFurnishedArr] = useState(new Array(3).fill(1));
+
+  const handlePropertyStatus = (ptype) => {
+    setPropertyType(ptype);
+    console.log(ptype);
+    console.log(propertyType)
+  };
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/api/allProject")
+       .get("http://localhost:5000/api/allProject")
       .then((res) => {
         //      console.log((res.data[0]))
         setHouses(res.data);
@@ -45,8 +55,72 @@ const SecondPgNavFiltr = () => {
 
     let tempHouses = [...fullHouses];
 
+
+    if(propertyType!="all"){
+        if(!props.propertyTypeArr[0])(props.HANDLE_PROPERTY_TYPE(0));
+        if(!props.propertyTypeArr[1])(props.HANDLE_PROPERTY_TYPE(1));
+        if(!props.propertyTypeArr[2])(props.HANDLE_PROPERTY_TYPE(2));
+    }
+    else{
+      tempHouses = tempHouses.filter((house) => { 
+        let pType = house.propertyType;
+    
+        // console.log(areaType)
+        // console.log(aType)
+    
+          if (props.propertyTypeArr[0] == 1 && pType == "apartment") {
+            return 1;
+          }
+    
+          if (props.propertyTypeArr[1] == 1 && pType == "villa") {
+            return 1;
+          }
+    
+          if (props.propertyTypeArr[2] == 1 && pType == "plot") {
+            return 1;
+          }
+          return 0;
+        });
+    }
+    if(props.state!="all"){
     tempHouses = tempHouses.filter((house) => {
-      let aType = house.areaType;
+      
+      if (house.state==props.state ) return 1;
+      return 0;
+    });
+  }
+
+    if(props.city!="all"){
+    tempHouses = tempHouses.filter((house) => {
+      
+      if (house.city==props.city ) return 1;
+      return 0;
+    });
+  }
+
+
+    if (search != "") {
+      props.HANDLE_STATE("all")
+      props.HANDLE_CITY("all")
+
+      tempHouses = tempHouses.filter((house) => {
+        let flag = 0;
+        
+        let state = house.state.toLowerCase();
+        let city = house.city.toLowerCase();
+        let lSearch = search.toLocaleLowerCase();
+        
+
+        if (state.includes(lSearch) || city.includes(lSearch)) return 1;
+        return 0;
+      });
+    }
+
+    tempHouses = tempHouses.filter((house) => { 
+    let aType = house.areaType;
+
+    // console.log(areaType)
+    // console.log(aType)
 
       if (areaType[0] == 1 && aType == "residential") {
         return 1;
@@ -62,17 +136,13 @@ const SecondPgNavFiltr = () => {
       return 0;
     });
 
-    if (search != "") {
-      tempHouses = tempHouses.filter((house) => {
-        let flag = 0;
-        let state = house.state.toLowerCase();
-        let city = house.city.toLowerCase();
-        let lSearch = search.toLocaleLowerCase();
+    if (propertyType != "all")
+    tempHouses = tempHouses.filter((house) => {
+      return house.propertyType == propertyType;
+    });
 
-        if (state.includes(lSearch) || city.includes(lSearch)) return 1;
-        return 0;
-      });
-    }
+
+
 
     tempHouses = tempHouses.filter((house) => {
       if (house.price >= budget[0] && house.price <= budget[1]) return 1;
@@ -80,22 +150,19 @@ const SecondPgNavFiltr = () => {
       return 0;
     });
 
+
     tempHouses = tempHouses.filter((house) => {
-      if (house.area >= area[0] && house.price <= area[1]) return 1;
+      if (house.area >= area[0] && house.area <= area[1]) return 1;
       return 0;
     });
 
-    if (propertyType != "all")
-      tempHouses = tempHouses.filter((house) => {
-        return house.propertyType == propertyType;
-      });
-
-    if (bhk != -1)
-      tempHouses = tempHouses.filter((house) => {
-        console.log(house.bedrooms);
-        console.log(bhk);
-        return house.bedrooms == bhk;
-      });
+   
+    // if (bhk != -1)
+    //   tempHouses = tempHouses.filter((house) => {
+    //     console.log(house.bedroom);
+    //     console.log(bhk);
+    //     return house.bedroom == bhk;  
+    //   });
 
     tempHouses = tempHouses.filter((house) => {
       let pAge = house.age;
@@ -113,34 +180,41 @@ const SecondPgNavFiltr = () => {
       }
       return 0;
     });
+    console.log(propertyStatus)
 
-    // if (propertyStatus != "all") {
-    //   console.log(propertyStatus);
-    //   console.log("nn");
-    //   tempHouses = tempHouses.filter((house) => {
-    //     return house.status == propertyStatus;
-    //   });
-    // }
-    // tempHouses = tempHouses.filter((house) => {
-    //   if(propertyStatus[0]=='a') return 1;
-    //   if( propertyStatus[0]=='u' && house.status[0]=='u' ) return 1;
-    //   if( propertyStatus[0]=='r' && house.status[0]=='r' ) return 1;
-
-
-    //     return 0;
-    //   });
-
-    tempHouses = tempHouses.filter((house) => {
-      return house.furnished == furnished;
-    });
-
-    if (propertyType != "all")
+    if (propertyStatus != "all") {
+      console.log(propertyStatus);
       tempHouses = tempHouses.filter((house) => {
-        console.log("ptype",propertyType)
-        console.log("house",house)
-        return house.status == propertyType;
+        console.log(house.status)
+        return house.status == propertyStatus;
       });
-      console.log("temphouse",tempHouses)
+    }
+
+    tempHouses = tempHouses.filter((house) => { 
+      let fs = house.furnished;
+      console.log(fs)
+  
+      // console.log(areaType)
+      // console.log(aType)
+  
+        if (furnishedArr[0] == 1 && fs == "furnished") {
+          return 1;
+        }
+  
+        if (furnishedArr[1] == 1 && fs == "semifurnished") {
+          return 1;
+        } 
+  
+        if (furnishedArr[2] == 1 && fs == "unfurnished") {
+          return 1;
+        }
+        return 0;
+      });
+
+   
+
+    
+   // console.log("temphouse",tempHouses)
 
     setHouses(tempHouses);
   }, [
@@ -152,7 +226,7 @@ const SecondPgNavFiltr = () => {
     bhk,
     propertyAge,
     propertyStatus,
-    furnished,
+    furnishedArr,
   ]);
 
   const handlebhk = (b) => {
@@ -171,9 +245,6 @@ const SecondPgNavFiltr = () => {
     setPropertyAge(temp);
   };
 
-  const handlePropertyStatus = (ptype) => {
-    setPropertyType(ptype);
-  };
 
   const handleAreaType = (ind) => {
     let temp = [...areaType];
@@ -488,7 +559,7 @@ const SecondPgNavFiltr = () => {
                       <label className="btnType">
                         <button
                           type="button"
-                          onClick={() => handlePropertyStatus("ready to move")}
+                          onClick={() => handlePropertyStatus("readytomove")}
                         >
                           Ready To Move
                         </button>
@@ -499,7 +570,7 @@ const SecondPgNavFiltr = () => {
                         <button
                           type="button"
                           onClick={() =>
-                            handlePropertyStatus("under construction")
+                            handlePropertyStatus("underconstruction")
                           }
                         >
                           Under Construction
@@ -516,10 +587,30 @@ const SecondPgNavFiltr = () => {
                       type="checkbox"
                       name=""
                       id=""
-                      checked={furnished}
-                      onChange={() => setFurnished(!furnished)}
+                      checked={furnishedArr[0]}
+                      onChange={() => handleFurnishedArr(0)}
                     />
                     <label>Furnished</label>
+                  </div>
+                  <div className="check1">
+                    <input
+                      type="checkbox"
+                      name=""
+                      id=""
+                      checked={furnishedArr[1]}
+                      onChange={() => handleFurnishedArr(1)}
+                    />
+                    <label>Semi-Furnished</label>
+                  </div>
+                  <div className="check1">
+                    <input
+                      type="checkbox"
+                      name=""
+                      id=""
+                      checked={furnishedArr[2]}
+                      onChange={() => handleFurnishedArr(2)}
+                    />
+                    <label>Unfurnished</label>
                   </div>
                 </div>
               </form>
@@ -535,4 +626,21 @@ const SecondPgNavFiltr = () => {
   );
 };
 
-export default SecondPgNavFiltr;
+const mapStateToProps=(states)=>{
+  return{
+    propertyTypeArr:states.propertyTypeArr,
+    state:states.state,
+    city:states.city
+  }
+}
+
+const mapDispatchToProps=(dispatch)=>{
+  return{
+    handlePropertyType:(id)=>dispatch({type:actionTypes.HANDLE_PROPERTY_TYPE,payload:{id:id}}),
+    handleState:(state)=>dispatch({type:actionTypes.HANDLE_STATE,payload:{state:state}}),
+    handleCity:(city)=>dispatch({type:actionTypes.HANDLE_CITY,payload:{city:city}}),
+  }
+}
+
+export default connect(mapStateToProps,mapDispatchToProps)(SecondPgNavFiltr);
+

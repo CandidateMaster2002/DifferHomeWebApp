@@ -16,26 +16,11 @@ const Home = (props) => {
  
  console.log(props)
 
-
-  const [propertyTypeArr, setPropertyTypeArr] = useState(new Array(3).fill(1));
-  const [state, setState] = useState("all");
-  const [city, setCity] = useState("all");
-
-  const handlePropertyTypeArr = (ind) => {
-    let temp = [...propertyTypeArr];
-    // console.log(temp);
-    temp[ind] = 1-temp[ind];
-    setPropertyTypeArr(temp);
-    //console.log(propertyTypeArr)
-  };
-
   useEffect(() => {
     Aos.init();
   }, []);
 
 
-  //console.log(state);
-  //console.log(city);
   return (
 
     <>
@@ -83,8 +68,8 @@ const Home = (props) => {
             id="apartment"
             name="opt-1"
             houseue="Apartment"
-            checked={props.propertyTypeArra[0]}
-           onChange={() => props.handlePropertyType(0)}
+            checked={props.propertyTypeArr[0]}
+           onChange={() => props.handlePropertyTypeArr(0)}
           />
 
           <label for="Apartment">Apartment</label>
@@ -93,8 +78,8 @@ const Home = (props) => {
             id="villa"
             name="opt-2"
             houseue="Villa"
-            checked={propertyTypeArr[1]}
-            onChange={() => handlePropertyTypeArr(1)}
+            checked={props.propertyTypeArr[1]}
+            onChange={() => props.handlePropertyTypeArr(1)}
           />
           <label for="villa">Villa</label>
           <br />
@@ -103,8 +88,8 @@ const Home = (props) => {
             id="plot"
             name="opt-3"
             houseue="Plot"
-            checked={propertyTypeArr[2]}
-            onChange={() => handlePropertyTypeArr(2)}
+            checked={props.propertyTypeArr[2]}
+            onChange={() => props.handlePropertyTypeArr(2)}
           />
           <label for="plot">Plot</label>
           <br />
@@ -112,7 +97,7 @@ const Home = (props) => {
           <div className="state_name">
             <label for="State">Select State :</label>
             <br />
-            <input list="states" name="States" placeholder="States" onChange={(e) => setState(e.target.value)} />
+            <input list="states" name="States" placeholder="States" onChange={(e) => props.handleState(e.target.value)} />
             <datalist id="states">
               {/* <option value="Andhra Pradesh" />
                      <option value="Arunachal Pradesh" />
@@ -149,7 +134,7 @@ const Home = (props) => {
           <div className="city_name">
             <label for="City">Select City :</label>
             <br />
-            <input list="cities" name="city" placeholder="City"  onChange={(e) => setCity(e.target.value)} />
+            <input list="cities" name="city" placeholder="City"  onChange={(e) => props.handleCity(e.target.value)} />
           
             <datalist id="cities">
               {/* <option value="Amaravati" />
@@ -230,13 +215,17 @@ const Home = (props) => {
 
 const mapStateToProps=(states)=>{
   return{
-    propertyTypeArra:states.propertyTypeArr
+    propertyTypeArr:states.propertyTypeArr,
+    state:states.state,
+    city:states.city
   }
 }
 
 const mapDispatchToProps=(dispatch)=>{
   return{
-    handlePropertyType:(id)=>dispatch({type:actionTypes.HANDLE_PROPERTY_TYPE,payload:{id:id}})
+    handlePropertyTypeArr:(id)=>dispatch({type:actionTypes.HANDLE_PROPERTY_TYPE,payload:{id:id}}),
+    handleState:(state)=>dispatch({type:actionTypes.HANDLE_STATE,payload:{state:state}}),
+    handleCity:(city)=>dispatch({type:actionTypes.HANDLE_CITY,payload:{city:city}}),
   }
 }
 
