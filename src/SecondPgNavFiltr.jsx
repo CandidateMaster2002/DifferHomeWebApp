@@ -12,7 +12,9 @@ import {connect} from 'react-redux'
 import * as actionTypes from './redux/actions'
 
 
+
 const SecondPgNavFiltr = (props) => {
+  
 
   const [houses, setHouses] = useState([]);
   const [fullHouses, setFullHouses] = useState([]);
@@ -25,6 +27,7 @@ const SecondPgNavFiltr = (props) => {
   const [propertyStatus, setPropertyStatus] = useState("all");
   const [areaType, setAreaType] = useState(new Array(3).fill(1));
   const [furnishedArr, handleFurnishedArr] = useState(new Array(3).fill(1));
+  console.log(props);
 
   const handlePropertyStatus = (ptype) => {
     setPropertyType(ptype);
@@ -34,7 +37,7 @@ const SecondPgNavFiltr = (props) => {
 
   useEffect(() => {
     axios
-       .get("http://localhost:5000/api/allProject")
+      .get("http://localhost:5000/api/allProject")
       .then((res) => {
         //      console.log((res.data[0]))
         setHouses(res.data);
